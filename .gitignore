@@ -13,4 +13,3 @@ scripts/*.sh
 *.pem
 *.pyc
 *.zip
-!*.md
