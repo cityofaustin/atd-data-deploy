@@ -1,7 +1,7 @@
 # transportation-data-deploy
 Publish the data.
 
-# Installation
+### Installation
 1. Define script parameters in `config.py`.
 
 2. Run `$ bash build.sh` to generate shell scripts and cron entries.
