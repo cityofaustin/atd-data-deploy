@@ -1,5 +1,4 @@
 knackpy.egg-info
-scripts/
 build/
 dist/
 changelog
@@ -13,3 +12,4 @@ scripts/*.sh
 *.pem
 *.pyc
 *.zip
+scripts/*
