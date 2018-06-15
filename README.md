@@ -3,7 +3,7 @@ Run Python scripts with Docker + cron.
 
 ### Installation
 
-1. Clone this repo on a Linux server: `git clone https://github.com/cityofaustin/transportation-data-deploy`.
+1. Clone this repo on a Linux host: `git clone https://github.com/cityofaustin/transportation-data-deploy`.
 
 2. Define script parameters in `config.py`.
 
