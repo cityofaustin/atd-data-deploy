@@ -1,11 +1,11 @@
-# transportation-data-deploy
+# python-docker-cron
 Run Python scripts with [Docker](https://docs.docker.com/) + [cron](http://man7.org/linux/man-pages/man8/cron.8.html).
 
 ## Installation
 
 1. Clone this repo on a Linux host: `git clone https://github.com/cityofaustin/transportation-data-deploy`.
 
-2. Define script parameters in `config.py`.
+2. Define script and `docker run` parameters in `config/scripts` and `config/docker`.
 
 2. `$ bash build.sh` to generate shell scripts and cron entries.
 
