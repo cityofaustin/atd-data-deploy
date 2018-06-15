@@ -1,5 +1,5 @@
 # transportation-data-deploy
-Run Python scripts with Docker + cron.
+Run Python scripts with [Docker](https://docs.docker.com/) + [cron](http://man7.org/linux/man-pages/man8/cron.8.html).
 
 ### Installation
 
