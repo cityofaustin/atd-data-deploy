@@ -7,7 +7,7 @@ This tool installs Python scripts as [cron](http://man7.org/linux/man-pages/man8
 
 1. Clone this repo on a Linux host: `git clone https://github.com/cityofaustin/transportation-data-deploy`.
 
-2. Define script and `docker run` parameters in `config/scripts` and `config/docker`.
+2. Define script and `docker run` parameters in `config/scripts.py` and `config/docker.py` respectively.
 
 3. `$ bash build.sh` to generate shell scripts and cron entries.
 
