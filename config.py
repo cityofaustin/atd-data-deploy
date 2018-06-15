@@ -394,5 +394,13 @@ CONFIG = {
             "script": "task_orders.py",
             "comment": "",
         },
+        {
+            "args": ["signal_request_evals", "data_tracker_prod", "-d socrata"],
+            "cron": "37 * * * *",
+            "enabled": True,
+            "name": "signal_request_evals",
+            "path": "transportation-data-publishing/transportation-data-publishing/open_data",
+            "script": "knack_data_pub.py",
+        },
     ],
 }
