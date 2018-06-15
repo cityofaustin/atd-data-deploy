@@ -1,7 +1,7 @@
 # transportation-data-deploy
 Suppose you have a bunch of Python scripts that you'd like to run on a schedule. Suppose you'd like those scripts to run inside Docker containers. Suppose those scripts are transportation-related (that part doesn't really matter).
 
-Run Python scripts with [Docker](https://docs.docker.com/) + [cron](http://man7.org/linux/man-pages/man8/cron.8.html).
+This tool installs Python scripts as [cron](http://man7.org/linux/man-pages/man8/cron.8.html) jobs that run inside [Docker](https://docs.docker.com/) containers on a Linux host.
 
 ## Installation
 
