@@ -7,21 +7,19 @@ Entries are referenced by Python scripts defined in `config/scripts`. The first 
 must be named `default`. Contents are defined as follows:
 
     - options: `docker run` options as defined here: https://docs.docker.com/engine/reference/commandline/run/ | optional
-    - image: name of the Docker image to run | required
-    - command: the base command that will be run by the Docker container | optional
-    - args:  args to be appened to the base command. Typically this would include the
-        name of the python | options
+    - image: Name of the Docker image to run | required
+    - command: The base command that will be run by the Docker container | optional
+    - args:  Command-line arguments to be appended to the base command. See note about $CMD below. | options
 
-Entries support three magical vars which are replaced at build time with
-    parameters from the SCRIPTS configuration:
+Entries support three magical vars which are replaced at build time:
 - $BUILD_PATH: The absolute path to the parent directory of this repository.
     Presuming this repository shares a parent directory with the script source files,
-    this makes it possible to properly mount the scripting directory regardless of the
-    host file structure. See "workdir" element of the SCRIPTS configuration
-- $CMD: This is the means by which a Python scripts defined in SCRIPTS is run by the
+    this makes it possible to properly mount the scripting directory regardless of where
+    it is insatlled on the host.
+- $CMD: This is the means by which a Python script defined in config/scripts.py is run by the
     docker container. $CMD will be replaced with the python script name and command
-    arguments definedin SCRIPTS.
-- $WORKDIR: The relative path defined in SCRIPTS.
+    arguments defined in config/scripts.py.
+- $WORKDIR: The relative path defined in config/scripts.py "workdir" config. 
 """
 
 DOCKER = {
