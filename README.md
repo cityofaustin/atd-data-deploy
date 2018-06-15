@@ -1,4 +1,4 @@
-# transportation-data-deploy
+# python-docker-cron
 Suppose you have a bunch of Python scripts that you'd like to run on a schedule. Suppose you'd like those scripts to run inside Docker containers. Suppose those scripts are transportation-related (that part doesn't really matter).
 
 This tool installs Python scripts as [cron](http://man7.org/linux/man-pages/man8/cron.8.html) jobs that run inside [Docker](https://docs.docker.com/) containers on a Linux host.
@@ -9,9 +9,9 @@ This tool installs Python scripts as [cron](http://man7.org/linux/man-pages/man8
 
 2. Define script and `docker run` parameters in `config/scripts.py` and `config/docker.py` respectively.
 
-2. `$ bash build.sh` to generate shell scripts and cron entries.
+3. `$ bash build.sh` to generate shell scripts and cron entries.
 
-3. `$ bash deploy.sh` to install crontab on host.
+4. `$ bash deploy.sh` to install crontab on host.
 
 ## License
 
