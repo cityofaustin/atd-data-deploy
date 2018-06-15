@@ -279,7 +279,7 @@ SCRIPTS = [
         "filename": "knack_data_pub.py",
     },
     {
-        "args": ["signal_retiming", "data_tracker_prod", "-socrata"],
+        "args": ["signal_retiming", "data_tracker_prod", "-d socrata"],
         "cron": "30 * * * *",
         "enabled": True,
         "name": "signal_retiming",
