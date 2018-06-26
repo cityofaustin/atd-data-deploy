@@ -271,7 +271,7 @@ SCRIPTS = [
         "filename": "signal_request_ranker.py",
     },
     {
-        "args": ["signal_requests", "data_tracker_prod", "-agol"],
+        "args": ["signal_requests", "data_tracker_prod", "-d agol"],
         "cron": "40 * * * *",
         "enabled": True,
         "name": "signal_requests",
