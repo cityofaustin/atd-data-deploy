@@ -233,13 +233,6 @@ SCRIPTS = [
         "filename": "secondary_signals_updater.py",
     },
     {
-        "cron": "10 * * * *",
-        "enabled": True,
-        "name": "sig_req_evals",
-        "workdir": "transportation-data-publishing/transportation-data-publishing/open_data",
-        "filename": "sig_req_evals.py",
-    },
-    {
         "cron": "*/2 * * * *",
         "enabled": True,
         "name": "sig_stat_pub",
@@ -397,4 +390,13 @@ SCRIPTS = [
         "workdir": "transportation-data-publishing/transportation-data-publishing/open_data",
         "filename": "knack_data_pub.py",
     },
+    {
+        "args": ["signal_request_evals", "data_tracker_prod", "-d socrata", "--replace"],
+        "cron": "4 * * * thu",
+        "enabled": True,
+        "name": "signal_request_evals",
+        "workdir": "transportation-data-publishing/transportation-data-publishing/open_data",
+        "filename": "knack_data_pub.py",
+        "comment" : "This is a redundant weekly replace to act as a catch-all to make sure all signal request evals are updated."
+    }
 ]
