@@ -366,7 +366,7 @@ SCRIPTS = [
         "filename": "metadata_updater.py",
     },
     {
-        "args": ["data_tracker_prod", "--replace"],
+        "args": ["data_tracker_prod"],
         "cron": "51 * * * *",
         "enabled": True,
         "name": "markings_agol",
