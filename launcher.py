@@ -34,28 +34,28 @@ class Script:
         config_path='./config/scripts.yml',
     ):
 
-        # set init attributes
-        self.name = name
-        self.log_path = log_path
-        self.config_path = config_path
-
-        # get config and set attributes
-        self.config = self._get_config()
-        self.args = self.config.get('args')    
-        self.dirname = self.config.get('path')
-        self.emails = self.config.get('emails')
-        self.filename = self.config.get('filename')
-        self.init_func = self.config.get('init_func')
-        self.job = self.config.get('job')
-        self.full_path = os.path.join(self.dirname, self.filename)
-        self.source = self.config.get('source')
-        self.destination = self.config.get('destination')
-
         try:
+            # set init attributes
+            self.name = name
+            self.log_path = log_path
+            self.config_path = config_path
+
             # setup logging
             self.logger = self._create_logger()
             self.logger.info("START AT {}".format(arrow.now()))
-            
+
+            # get config and set attributes
+            self.config = self._get_config()
+            self.args = self.config.get('args')    
+            self.dirname = self.config.get('path')
+            self.emails = self.config.get('emails')
+            self.filename = self.config.get('filename')
+            self.init_func = self.config.get('init_func')
+            self.job = self.config.get('job')
+            self.full_path = os.path.join(self.dirname, self.filename)
+            self.source = self.config.get('source')
+            self.destination = self.config.get('destination')
+  
             # get new job instance
             if self.job:
                 self.job = self._get_job()
@@ -168,10 +168,15 @@ class Script:
 
 
     def _handle_exception(self, e):
-        self.logger.error(traceback.format_exc())
+        try:
+            self.logger.error(traceback.format_exc())
+        except AttributeError:
+            pass
 
-        if self.job:
+        try:
             self.job.result('error', message=str(e))
+        except AttributeError:
+            pass
 
         raise e
 

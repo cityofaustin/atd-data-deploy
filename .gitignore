@@ -14,3 +14,4 @@ scripts/*.sh
 *.zip
 scripts/*.sh
 *secrets*
+/log
