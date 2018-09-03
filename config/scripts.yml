@@ -1,21 +1,45 @@
 # Configuration file for Python scripts.
 #
-# Each SCRIPTS entry specifies a Python script that will be installed as cron job and
+# Each entry specifies a Python script that will be installed as cron job and
 # run by the *launcher* in the specified docker container.
 #
 # Contents are defined as follows:
-#     - args: The script's command line arguments | optional
-#     - cron: `cron` field definitions. See CRONTAB(5) man page. | required
-#     - docker_cmd: name of the DOCKER cmd configration that will run the script. See
-#         `config/docker`. If ommitted will use "default" DOCKER config | optional
-#     - enabled: If a cron script should installed for this script. If false or absent
-#         the entry will be ignored. | Optional
-#     - filename: The filename of the script. | reqiured
+#     - args (array, optional): The script's command line arguments
+#
+#     - comment (str, optional): Optional comment which is ignored.
+# 
+#     - cron (str, required): `cron` field definitions. See CRONTAB(5) man page.
+#
+#     - destination (str, optional): Required if running script as a Job. Name
+#         of the destination application of this ETL process.
+#
+#     - docker_cmd (str, required): name of the DOCKER cmd configration that will
+#         run the script. See `config/docker`. If ommitted will use "default" DOCKER
+#         config
+# 
+#     - enabled (bool, optional): If a cron entry should written for this script.
+#         If false or absent the entry will be ignored.
+# 
+#     - filename (str, required): The filename of the script.
+#
+#     - init_func(str, required): The name of function which will be imported and
+#       run via the launcher. Typicall "main" or "init".
+#
+#     - job (bool, optional): If the script shall be registered as a "job" on the job
+#         logging server. Any script that supports job logging must accept a special
+#         "last_run_date" paramater to support incremental loading. See README for
+#         details.
+#
 #     - name: Text idenfier of the script. Will be used to name the cron shell script
 #         and *must be unique* to all script entries. | required
-#     - workdir: The path *relative to this repository* where the script is located. If
-#         omitted `docker run` will use the default working directory of the image | optional
-#     - comment: Optional comment which is ignored. | optional
+# 
+#     - path (string, required): The path *relative to this repository* where the script
+#         is located.
+#
+#     - source (str, optional): Required if running script as a Job. Name
+#         of the source application of this ETL process.
+#
+
 ---
 backup:
   args:
