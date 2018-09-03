@@ -79,7 +79,11 @@ class Script:
                         str(self.last_run_date)
                     )  # **command lien args must be strings**
 
-            # manage path and moduel imports
+            # replace system arguments with script parameters
+            self.args.insert(0, self.filename)
+            sys.argv = self.args
+
+            # manage path and module imports
             self._set_path()
             self._clear_module_cache(module_list=["config", "config.secrets"])
 
@@ -88,7 +92,7 @@ class Script:
             self.main = getattr(self.module, self.init_func)
 
             # run the script
-            self.results = self.main(self.args)
+            self.results = self.main()
 
             # coerce records processed if number retruned from function
             if self.job:

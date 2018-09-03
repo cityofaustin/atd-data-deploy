@@ -1,9 +1,0 @@
-START AT 2018-09-03T00:55:43.317442-05:00
-Traceback (most recent call last):
-  File "launcher.py", line 59, in __init__
-    int('ab')
-ValueError: invalid literal for int() with base 10: 'ab'
-
-START AT 2018-09-03T00:56:20.249718-05:00
-START AT 2018-09-03T00:56:59.956632-05:00
-START AT 2018-09-03T00:57:18.180257-05:00

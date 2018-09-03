@@ -616,7 +616,6 @@ traffic_reports:
 traffic_reports_pub:
   args:
   - traffic_reports
-  - data_tracker_prod
   - -d
   - socrata
   cron: 6-59/5 * * * *
