@@ -3,6 +3,7 @@ Generate shell scripts and crontab for deployment.
 """
 import os
 import pdb
+import yaml
 import sys
 
 from config.scripts import SCRIPTS

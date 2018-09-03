@@ -1,0 +1,94 @@
+START AT 2018-09-02T09:34:12.604996-05:00
+Traceback (most recent call last):
+  File "launcher.py", line 56, in __init__
+    self.module = self._script_as_module()
+  File "launcher.py", line 109, in _script_as_module
+    spec = importlib.util.spec_from_file_location(self.init_function, self.path)
+AttributeError: 'Script' object has no attribute 'path'
+
+START AT 2018-09-02T09:37:10.393553-05:00
+Traceback (most recent call last):
+  File "launcher.py", line 57, in __init__
+    self.module = self._script_as_module()
+  File "launcher.py", line 113, in _script_as_module
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 780, in get_code
+  File "<frozen importlib._bootstrap_external>", line 832, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: 'transportation-data-publishing/transportation-data-publishing/open_data/knack_data_pub.py'
+
+START AT 2018-09-02T09:38:31.171394-05:00
+Traceback (most recent call last):
+  File "launcher.py", line 57, in __init__
+    self.module = self._script_as_module()
+  File "launcher.py", line 113, in _script_as_module
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "../transportation-data-publishing/transportation-data-publishing/open_data/knack_data_pub.py", line 24, in <module>
+    from config.knack.config import cfg
+ModuleNotFoundError: No module named 'config.knack'
+
+START AT 2018-09-02T09:40:47.101602-05:00
+Traceback (most recent call last):
+  File "launcher.py", line 57, in __init__
+    self.module = self._script_as_module()
+  File "launcher.py", line 113, in _script_as_module
+    module = importlib.util.module_from_spec(spec)
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "../transportation-data-publishing/transportation-data-publishing/open_data/knack_data_pub.py", line 25, in <module>
+    from config.knack.config import cfg
+  File "../transportation-data-publishing/transportation-data-publishing/open_data/knack_data_pub.py", line 25, in <module>
+    from config.knack.config import cfg
+  File "/Users/claryj/miniconda2/envs/dropbox/lib/python3.6/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/Users/claryj/miniconda2/envs/dropbox/lib/python3.6/bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+START AT 2018-09-02T09:42:11.567210-05:00
+Traceback (most recent call last):
+  File "launcher.py", line 56, in __init__
+    self._setpath()
+  File "launcher.py", line 106, in _setpath
+    return sys.path
+  File "launcher.py", line 106, in _setpath
+    return sys.path
+  File "/Users/claryj/miniconda2/envs/dropbox/lib/python3.6/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/Users/claryj/miniconda2/envs/dropbox/lib/python3.6/bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+START AT 2018-09-02T09:43:11.213767-05:00
+Traceback (most recent call last):
+  File "launcher.py", line 62, in __init__
+    self.main(self.args)
+  File "launcher.py", line 62, in __init__
+    self.main(self.args)
+  File "/Users/claryj/miniconda2/envs/dropbox/lib/python3.6/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/Users/claryj/miniconda2/envs/dropbox/lib/python3.6/bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+START AT 2018-09-02T09:45:05.761463-05:00
+Traceback (most recent call last):
+  File "launcher.py", line 57, in __init__
+    self.module = self._script_as_module()
+  File "launcher.py", line 114, in _script_as_module
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "../transportation-data-publishing/transportation-data-publishing/open_data/knack_data_pub.py", line 25, in <module>
+    from config.secrets import *
+  File "../transportation-data-publishing/transportation-data-publishing/open_data/knack_data_pub.py", line 25, in <module>
+    from config.secrets import *
+  File "/Users/claryj/miniconda2/envs/dropbox/lib/python3.6/bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/Users/claryj/miniconda2/envs/dropbox/lib/python3.6/bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+START AT 2018-09-02T09:45:21.066562-05:00

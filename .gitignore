@@ -13,3 +13,4 @@ scripts/*.sh
 *.pyc
 *.zip
 scripts/*.sh
+*secrets*
