@@ -26,13 +26,7 @@ from config import secrets
 
 
 class Script:
-    
-    def __init__(
-        self,
-        name,
-        log_path = './log',
-        config_path='./config/scripts.yml',
-    ):
+    def __init__(self, name, log_path="./log", config_path="./config/scripts.yml"):
 
         try:
             # set init attributes
@@ -46,31 +40,33 @@ class Script:
 
             # get config and set attributes
             self.config = self._get_config()
-            self.args = self.config.get('args')    
-            self.dirname = self.config.get('path')
-            self.emails = self.config.get('emails')
-            self.filename = self.config.get('filename')
-            self.init_func = self.config.get('init_func')
-            self.job = self.config.get('job')
+            self.args = self.config.get("args")
+            self.dirname = self.config.get("path")
+            self.emails = self.config.get("emails")
+            self.filename = self.config.get("filename")
+            self.init_func = self.config.get("init_func")
+            self.job = self.config.get("job")
             self.full_path = os.path.join(self.dirname, self.filename)
-            self.source = self.config.get('source')
-            self.destination = self.config.get('destination')
-  
+            self.source = self.config.get("source")
+            self.destination = self.config.get("destination")
+
             # get new job instance
             if self.job:
                 self.job = self._get_job()
-                self.job.start()
                 self.last_run_date = self.job.most_recent()
+                self.job.start()
 
                 # append last run date to args
                 # any compatible script must support a --last_run_date argument
                 if self.last_run_date:
-                    self.args.append('--last_run_date')
-                    self.args.append(str(self.last_run_date)) # **command lien args must be strings**
+                    self.args.append("--last_run_date")
+                    self.args.append(
+                        str(self.last_run_date)
+                    )  # **command lien args must be strings**
 
             # manage path and moduel imports
             self._set_path()
-            self._clear_module_cache(module_list=['config', 'config.secrets'])
+            self._clear_module_cache(module_list=["config", "config.secrets"])
 
             # get script module and main function
             self.module = self._script_as_module()
@@ -87,25 +83,23 @@ class Script:
                 except ValueError:
                     self.records_processed = None
 
-                self.job.result('success', records_processed=self.records_processed)
+                self.job.result("success", records_processed=self.records_processed)
             return
 
         except Exception as e:
             self._handle_exception(e)
 
-    
     def _get_config(self):
 
         with open(self.config_path) as fin:
             scripts_config = yaml.load(fin)
 
             config = scripts_config.get(self.name)
-        
+
             if config:
                 return config
             else:
                 raise AttributeError(f"Config not found for script {self.name}")
-
 
     def _create_logger(self):
         """
@@ -122,7 +116,6 @@ class Script:
         logfile = f"{self.log_path}/{self.name}.log"
 
         return logutil.timed_rotating_log(logfile)
-
 
     def _get_job(self):
         """Create a named script job to post on job server. Critical for incremental loading.
@@ -149,23 +142,20 @@ class Script:
         for module_name in module_list:
             sys.modules.pop(module_name)
 
-
     def _set_path(self):
-        # replace the first entry in the sys path 
+        # replace the first entry in the sys path
         # to match the path of the script to be launched
         # ensures imports work on imported script
         sys.path[0] = self.dirname
         return sys.path
 
-
     def _script_as_module(self):
         # import script as module
-        # (see: https://stackoverflow.com/questions/67631/how-to-import-a-module-given-the-full-path) 
+        # (see: https://stackoverflow.com/questions/67631/how-to-import-a-module-given-the-full-path)
         spec = importlib.util.spec_from_file_location(self.init_func, self.full_path)
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         return module
-
 
     def _handle_exception(self, e):
         try:
@@ -174,7 +164,7 @@ class Script:
             pass
 
         try:
-            self.job.result('error', message=str(e))
+            self.job.result("error", message=str(e))
         except AttributeError:
             pass
 
@@ -189,10 +179,10 @@ def cli_args():
 
     """
     parser = argparse.ArgumentParser()
-    
+
     parser.add_argument(
         "name",
-        help="The unique name of the script to run, as defined in the scripts.yml config."
+        help="The unique name of the script to run, as defined in the scripts.yml config.",
     )
 
     return parser.parse_args()
@@ -201,18 +191,6 @@ def cli_args():
 if __name__ == "__main__":
     args = cli_args()
 
-    script = Script(
-        args.name
-    )
+    script = Script(args.name)
 
     sys.exit()
-
-
-
-
-
-
-
-
-
-
