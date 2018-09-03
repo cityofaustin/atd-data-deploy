@@ -1,13 +1,30 @@
-# python-docker-cron
-Suppose you have a bunch of Python scripts that you'd like to run on a schedule. Suppose you'd like those scripts to run inside Docker containers. Suppose those scripts are transportation-related (that part doesn't really matter).
+# transportation-data-deploy
 
-This tool installs Python scripts as [cron](http://man7.org/linux/man-pages/man8/cron.8.html) jobs that run inside [Docker](https://docs.docker.com/) containers on a Linux host.
+This repository houses a deployment framework for Austin Transportation's ETL scripting tasks. It uses [Python](https://www.python.org/download/releases/3.0/), [Docker](https://docs.docker.com/) and [cron](http://man7.org/linux/man-pages/man8/cron.8.html) to schedule and monitor each task. The framework's core components are:
+
+#### Launcher (launch.py)
+
+The launcher acts as a wrapper for each ETL script and manages logging, email notifications, and job registration for incremental data loading.
+
+#### Builder (build.sh)
+    
+The builder generates a `docker run` command for each task. It ensures each task is properly passed to the **launcher**, and packages it as a shell script which can be installed as a cron job.
+
+#### Deployer (deploy.sh)
+    
+Given the master task list, the deployer schedules each script by installing a crontab on a Linux host.
+
+## Requirements
+
+- a Linux host with Python v2.7+ installed
+
+- [PyYAML](https://pypi.org/project/PyYAML/)
 
 ## Installation
 
 1. Clone this repo on a Linux host: `git clone https://github.com/cityofaustin/transportation-data-deploy`.
 
-2. Define script and `docker run` parameters in `config/scripts.py` and `config/docker.py` respectively.
+2. Define script and `docker run` parameters in `config/scripts.yml` and `config/docker.yml` respectively.
 
 3. `$ bash build.sh` to generate shell scripts and cron entries.
 
