@@ -92,8 +92,7 @@ class Script:
             # get script module and main function
             self.module = self._script_as_module()
             self.main = getattr(self.module, self.init_func)
-            int('abc')
-            pdb.set_trace()
+
             # run the script
             self.results = self.main()
 
