@@ -73,13 +73,11 @@ class Script:
                 self.last_run_date = self.job.most_recent()
                 self.job.start()
 
-                # append last run date to args
-                # any compatible script must support a --last_run_date argument
-                if self.last_run_date:
-                    self.args.append("--last_run_date")
-                    self.args.append(
-                        str(self.last_run_date)
-                    )  # **command lien args must be strings**
+                # set last_run_date value (script must support a --last_run_date arguement)
+                if "--last_run_date" in self.args:
+                    index = self.args.index("--last_run_date") + 1
+                    # **command lin args must be strings, hence why we stringify last_run_date**
+                    self.args[index] = str(self.last_run_date) 
 
             # replace system arguments with script parameters
             self.args.insert(0, self.filename)
