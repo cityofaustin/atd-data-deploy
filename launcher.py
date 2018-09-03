@@ -53,11 +53,13 @@ class Script:
             self.logger = self._create_logger()
             self.logger.info("START AT {}".format(arrow.now()))
 
+            # setup email
+            self.email_recip_list = secrets.ALERTS_DISTRIBUTION
+
             # get config and set attributes
             self.config = self._get_config()
             self.args = self.config.get("args")
             self.dirname = self.config.get("path")
-            self.emails = self.config.get("emails")
             self.filename = self.config.get("filename")
             self.init_func = self.config.get("init_func")
             self.job = self.config.get("job")
@@ -90,7 +92,8 @@ class Script:
             # get script module and main function
             self.module = self._script_as_module()
             self.main = getattr(self.module, self.init_func)
-
+            int('abc')
+            pdb.set_trace()
             # run the script
             self.results = self.main()
 
@@ -177,6 +180,17 @@ class Script:
         spec.loader.exec_module(module)
         return module
 
+    def _send_email(self, exception):
+
+        emailutil.send_email(
+            self.email_recip_list,
+            f"Script Failure: {self.filename} ({self.name})",
+            exception,
+            secrets.EMAIL["user"],
+            secrets.EMAIL["password"],
+        )
+
+
     def _handle_exception(self, e):
         try:
             self.logger.error(traceback.format_exc())
@@ -187,6 +201,8 @@ class Script:
             self.job.result("error", message=str(e))
         except AttributeError:
             pass
+        
+        self._send_email(str(e))
 
         raise e
 
