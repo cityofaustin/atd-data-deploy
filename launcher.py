@@ -1,24 +1,22 @@
-"""Summary
-a script launcher tha handls:
-    job creation for job server
-    log start and end time
-    log exceptions
-    dynamically import 
+"""Script Launcher 
+
+A python script launcher that handles:
+    Logging
+    Job registration for incremental ETL
+    Exception handling
+    Email notifications
+
 """
-# system packages
 import argparse
 import importlib
 import os
-import traceback
-
 import pdb
 import sys
+import traceback
 import yaml
 
-# other packages
 import arrow
 
-# tdutils subpackages
 from tdutils import jobutil
 from tdutils import emailutil
 from tdutils import logutil
@@ -27,7 +25,24 @@ from config import secrets
 
 class Script:
     def __init__(self, name, log_path="./log", config_path="./config/scripts.yml"):
+        """Class to manage import and running of script.
+        
+        This class supports the importing running of a remote pythonscript,
+        given that it complies with a few basic requirements. Most importantly,
+        the script parameters must be defined in scripts.yml configuration file.
 
+        Args:
+            name (str): The name of the script. Must have a corresponding entry
+                in the scripts.yml configuration file. 
+
+            log_path (str, optional): The path to which log files be written.
+
+            config_path (str, optional): The path from which to which the
+                configuration file for this script.
+        
+        Returns:
+            None
+        """
         try:
             # set init attributes
             self.name = name
@@ -84,6 +99,7 @@ class Script:
                     self.records_processed = None
 
                 self.job.result("success", records_processed=self.records_processed)
+
             return
 
         except Exception as e:
@@ -118,13 +134,13 @@ class Script:
         return logutil.timed_rotating_log(logfile)
 
     def _get_job(self):
-        """Create a named script job to post on job server. Critical for incremental loading.
-        
+        """Create a named script job to post on job server.
+
         Args:
             script_name (str): script_name
 
         Returns:
-            job class: 
+            job (class inst) 
 
         """
         return jobutil.Job(
@@ -172,12 +188,7 @@ class Script:
 
 
 def cli_args():
-    """Get command line arguments.
-    
-    Returns: args_dict
-        a dictionary contains all arguments from command line imputs.
-
-    """
+    # Get command line arguments and return parsed args as dict
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
