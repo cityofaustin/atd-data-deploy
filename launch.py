@@ -121,7 +121,7 @@ class Script:
             if config:
                 return config
             else:
-                raise AttributeError(f"Config not found for script {self.name}")
+                raise AttributeError(f"Config not find for script {self.name}")
 
     def _create_logger(self):
         """
