@@ -77,7 +77,7 @@ class Script:
                 if "--last_run_date" in self.args:
                     index = self.args.index("--last_run_date") + 1
                     # **command lin args must be strings, hence why we stringify last_run_date**
-                    self.args[index] = str(self.last_run_date) 
+                    self.args[index] = str(self.last_run_date)
 
             # replace system arguments with script parameters
             self.args.insert(0, self.filename)
@@ -187,7 +187,6 @@ class Script:
             secrets.EMAIL["password"],
         )
 
-
     def _handle_exception(self, e):
         try:
             self.logger.error(traceback.format_exc())
@@ -198,7 +197,7 @@ class Script:
             self.job.result("error", message=str(e))
         except AttributeError:
             pass
-        
+
         self._send_email(str(e))
 
         raise e
