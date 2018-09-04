@@ -43,30 +43,30 @@ class Script:
         Returns:
             None
         """
+        # set init attributes
+        self.name = name
+        self.log_path = log_path
+        self.config_path = config_path
+
+        # setup logging
+        self.logger = self._create_logger()
+        self.logger.info("START AT {}".format(arrow.now()))
+
+        # setup email
+        self.email_recip_list = secrets.ALERTS_DISTRIBUTION
+
+        # get config and set attributes
+        self.config = self._get_config()
+        self.args = self.config.get("args")
+        self.dirname = self.config.get("path")
+        self.filename = self.config.get("filename")
+        self.init_func = self.config.get("init_func")
+        self.job = self.config.get("job")
+        self.full_path = os.path.join(self.dirname, self.filename)
+        self.source = self.config.get("source")
+        self.destination = self.config.get("destination")
+
         try:
-            # set init attributes
-            self.name = name
-            self.log_path = log_path
-            self.config_path = config_path
-
-            # setup logging
-            self.logger = self._create_logger()
-            self.logger.info("START AT {}".format(arrow.now()))
-
-            # setup email
-            self.email_recip_list = secrets.ALERTS_DISTRIBUTION
-
-            # get config and set attributes
-            self.config = self._get_config()
-            self.args = self.config.get("args")
-            self.dirname = self.config.get("path")
-            self.filename = self.config.get("filename")
-            self.init_func = self.config.get("init_func")
-            self.job = self.config.get("job")
-            self.full_path = os.path.join(self.dirname, self.filename)
-            self.source = self.config.get("source")
-            self.destination = self.config.get("destination")
-
             # get new job instance
             if self.job:
                 self.job = self._get_job()
@@ -199,6 +199,7 @@ class Script:
             self.job.result("error", message=str(e))
         except AttributeError:
             pass
+
 
         self._send_email(str(e))
 
