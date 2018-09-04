@@ -590,6 +590,10 @@ signals_socrata:
   path: ../transportation-data-publishing/transportation-data-publishing/open_data
   source: knack
 street_seg_updater:
+  args:
+  - data_tracker_prod
+  - --last_run_date
+  - 0
   cron: 45 * * * *
   destination: knack
   enabled: true
