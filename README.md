@@ -2,7 +2,7 @@
 
 This repository houses a deployment framework for Austin Transportation's ETL scripting tasks. It uses [Python](https://www.python.org/download/releases/3.0/), [Docker](https://docs.docker.com/) and [cron](http://man7.org/linux/man-pages/man8/cron.8.html) to schedule and monitor each task. The framework's core components are:
 
-#### Launcher (launcher.py)
+#### Launcher (launch.py)
 
 The launcher acts as a wrapper for each ETL script and manages logging, email notifications, and job registration for incremental data loading.
 
