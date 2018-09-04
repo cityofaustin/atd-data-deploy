@@ -8,7 +8,7 @@ The launcher acts as a wrapper for each ETL script and manages logging, email no
 
 #### Builder (build.sh)
     
-The builder generates a `docker run` command for each task. It ensures each task is properly passed to **launcher**, and packages it as a shell script which can be installed as a cron job.
+The builder generates a `docker run` command for each task. It ensures each task is properly passed to the **launcher**, and packages it as a shell script which can be installed as a cron job.
 
 #### Deployer (deploy.sh)
     
