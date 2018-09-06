@@ -77,6 +77,10 @@ class Script:
             if self.args:
                 # set last_run_date value (script must support a --last_run_date arguement)
                 if "--last_run_date" in self.args:
+                    
+                    if not self.last_run_date:
+                        self.last_run_date = "0"
+                        
                     index = self.args.index("--last_run_date") + 1
                     # **command lin args must be strings, hence why we stringify last_run_date**
                     self.args[index] = str(self.last_run_date)
