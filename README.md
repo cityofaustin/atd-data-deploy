@@ -14,6 +14,11 @@ The builder generates a `docker run` command for each task. It ensures each task
     
 Given the master task list, the deployer schedules each script by installing a crontab on a Linux host.
 
+## Requirements
+
+- a Linux host with Python v2.7+ installed
+
+- [PyYAML](https://pypi.org/project/PyYAML/)
 
 ## Installation
 
