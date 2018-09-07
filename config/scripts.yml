@@ -271,6 +271,8 @@ dms_agol:
   path: ../transportation-data-publishing/transportation-data-publishing/open_data
   source: knack
 dms_msg_pub:
+  args:
+  - data_tracker_prod
   cron: 21 * * * *
   destination: knack
   enabled: true
