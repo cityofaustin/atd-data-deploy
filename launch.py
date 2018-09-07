@@ -85,9 +85,12 @@ class Script:
                     # **command lin args must be strings, hence why we stringify last_run_date**
                     self.args[index] = str(self.last_run_date)
 
-                # replace system arguments with script parameters
-                self.args.insert(0, self.filename)
-                sys.argv = self.args
+            if not self.args:
+                self.args =[]
+                
+            # replace system arguments with script parameters
+            self.args.insert(0, self.filename)
+            sys.argv = self.args
 
             # manage path and module imports
             self._set_path()
