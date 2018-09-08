@@ -1,7 +1,6 @@
 knackpy.egg-info
 build/
 dist/
-changelog
 crontab.sh
 __pycache__
 .env
@@ -13,3 +12,6 @@ scripts/*.sh
 *.pyc
 *.zip
 scripts/*.sh
+*secrets*
+log/
+changelog.md
