@@ -759,3 +759,12 @@ work_orders_signals:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/open_data
   source: knack
+pr_copier:
+  cron: '*/1 * * * *'
+  destination: finance-admin-portal
+  enabled: true
+  filename: pr_copier.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/finance_admin
+  source: finance-admin-portal
