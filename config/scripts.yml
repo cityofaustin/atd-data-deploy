@@ -673,11 +673,11 @@ traffic_reports_pub:
 traffic_study_locations:
   cron: 50 3 * * *
   destination: socrata
-  enabled: false
+  enabled: true
   filename: traffic_study_locations.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../transportation-data-publishing/transportation-data-publishing/traffic_study
   source: agol
 travel_sensors_agol:
   args:
