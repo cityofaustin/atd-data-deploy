@@ -765,3 +765,17 @@ pr_copier:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/finance_admin
   source: finance-admin-portal
+csr_flex_notes:
+  args:
+  - csr_flex_notes
+  - data_tracker_prod
+  - --last_run_date
+  - "0"
+  cron: 5 * * * sat
+  destination: postgrest
+  enabled: true
+  filename: knack_postgrest_pub.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: knack
