@@ -686,11 +686,11 @@ traffic_reports_pub:
 traffic_study_locations:
   cron: 50 3 * * *
   destination: socrata
-  enabled: false
+  enabled: true
   filename: traffic_study_locations.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../transportation-data-publishing/transportation-data-publishing/traffic_study
   source: agol
 travel_sensors_agol:
   args:
@@ -779,3 +779,39 @@ csr_flex_notes:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
   source: knack
+finance_master_agreements:
+  args:
+  - master_agreements
+  - finance_admin_prod
+  cron: '01 5 * * *'
+  destination: finance-admin-portal
+  enabled: true
+  filename: finance_scraper.py
+  init_func: main
+  job: true
+  path: ../finance-scraper
+  source: controllers_office
+finance_objects:
+  args:
+  - objects
+  - finance_admin_prod
+  cron: '07 5 * * *'
+  destination: finance-admin-portal
+  enabled: true
+  filename: finance_scraper.py
+  init_func: main
+  job: true
+  path: ../finance-scraper
+  source: controllers_office
+finance_units:
+  args:
+  - units
+  - finance_admin_prod
+  cron: '11 5 * * *'
+  destination: finance-admin-portal
+  enabled: true
+  filename: finance_scraper.py
+  init_func: main
+  job: true
+  path: ../finance-scraper
+  source: controllers_office
