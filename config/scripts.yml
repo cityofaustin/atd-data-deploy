@@ -146,7 +146,6 @@ detectors_socrata:
   path: ../transportation-data-publishing/transportation-data-publishing/open_data
   source: knack
 device_status_cameras_cell_modem:
-  docker_cmd: cell_network
   args:
   - cameras_cell_modem
   - data_tracker_prod
