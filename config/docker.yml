@@ -31,3 +31,17 @@ default:
   - --rm
   - --network=host
   - -w /app/$WORKDIR
+cell_network:
+  args:
+  - $CMD
+  command: python
+  image: atddocker/tdp
+  options:
+  - -d
+  - -v $BUILD_PATH:/app
+  - --rm
+  - --net=container:cradlepoint_vpn
+  - -w /app/$WORKDIR
+
+
+

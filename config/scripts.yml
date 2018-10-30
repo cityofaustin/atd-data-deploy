@@ -145,12 +145,25 @@ detectors_socrata:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/open_data
   source: knack
-device_status_cameras:
+device_status_cameras_cell_modem:
+  docker_cmd: cell_network
   args:
-  - cameras
+  - cameras_cell_modem
   - data_tracker_prod
   - --json
   cron: 30 3 * * *
+  destination: knack
+  enabled: true
+  filename: device_status.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: knack
+device_status_cameras_not_cell_modem:
+  args:
+  - cameras_not_cell_modem
+  - data_tracker_prod
+  cron: 35 3 * * *
   destination: knack
   enabled: true
   filename: device_status.py
@@ -752,6 +765,20 @@ pr_copier:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/finance_admin
   source: finance-admin-portal
+csr_flex_notes:
+  args:
+  - csr_flex_notes
+  - data_tracker_prod
+  - --last_run_date
+  - "0"
+  cron: 5 * * * sat
+  destination: postgrest
+  enabled: true
+  filename: knack_postgrest_pub.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: knack
 finance_master_agreements:
   args:
   - master_agreements
@@ -788,7 +815,3 @@ finance_units:
   job: true
   path: ../finance-scraper
   source: controllers_office
-
-
-
-
