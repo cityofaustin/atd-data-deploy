@@ -814,3 +814,14 @@ finance_units:
   job: true
   path: ../finance-scraper
   source: controllers_office
+sr_due_date:
+  args:
+  - data_tracker_prod
+  cron: 07 4 * * *
+  destination: knack
+  enabled: true
+  filename: sr_due_date.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: knack
