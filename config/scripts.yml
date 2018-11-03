@@ -817,7 +817,7 @@ finance_units:
 sr_due_date:
   args:
   - data_tracker_prod
-  cron: 07 4 * * *
+  cron: '07 4 * * *'
   destination: knack
   enabled: true
   filename: sr_due_date.py
@@ -829,7 +829,7 @@ sr_asset_assign:
   args:
   - data_tracker_prod
   - signals
-  cron: * * * * *
+  cron: '* * * * *'
   destination: knack
   enabled: true
   filename: sr_asset_assign.py
