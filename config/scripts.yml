@@ -825,3 +825,15 @@ sr_due_date:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
   source: knack
+sr_asset_assign:
+  args:
+  - data_tracker_prod
+  - signals
+  cron: * * * * *
+  destination: knack
+  enabled: true
+  filename: sr_asset_assign.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: knack
