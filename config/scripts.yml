@@ -827,8 +827,8 @@ sr_due_date:
   source: knack
 sr_asset_assign:
   args:
-  - data_tracker_prod
   - signals
+  - data_tracker_prod
   cron: '* * * * *'
   destination: knack
   enabled: true
