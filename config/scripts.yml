@@ -55,8 +55,9 @@
 #   source: knack
 
 waze_archive_postgre:
-  cron: */5 * * * *
+  cron: "*/5 * * * *"
   destination: postgrest
+  docker_cmd: default
   enabled: true
   filename: waze_psql.py
   init_func: main
