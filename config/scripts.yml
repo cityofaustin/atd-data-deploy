@@ -40,12 +40,27 @@
 #         of the source application of this ETL process.
 #
 ---
+
+# backup:
+#   args:
+#   - data_tracker_prod
+#   cron: 50 2 * * *
+#   destination: csv
+#   docker_cmd: default
+#   enabled: true
+#   filename: backup.py
+#   init_func: main
+#   job: true
+#   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+#   source: knack
+
 waze_archive_postgre:
-  cron: 5 * * * *
+  cron: */5 * * * *
   destination: postgrest
   enabled: true
-  filename: waze_psql_py
+  filename: waze_psql.py
   init_func: main
   job: true
   path: ../waze-archive
   source: waze_endpoint
+
