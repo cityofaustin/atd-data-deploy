@@ -54,6 +54,30 @@
 #   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
 #   source: knack
 
+signal_pms_fulcrum_to_postgre:
+  args:
+  - --last_run_date
+  cron: 15 2 * * *
+  destination: postgrest
+  enabled: true
+  filename: fulc_postgre.py
+  init_func: main
+  job: true
+  path: ../transportation-knack-fulcrum
+  source: fulcrum
+signal_pms_postgre_to_knack:
+  args:
+  - --last_run_date
+  - data_tracker_test
+  cron: 15 2 * * *
+  destination: knack
+  enabled: true
+  filename: signal_pms_fulcrum.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: postgrest
+
 waze_archive_postgre:
   cron: "*/5 * * * *"
   destination: postgrest
