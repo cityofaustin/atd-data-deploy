@@ -837,3 +837,18 @@ sr_asset_assign:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
   source: knack
+dockless-trips:
+  args:
+  - dockless_trips
+  - -d
+  - socrata
+  - --last_run_date
+  - "0"
+  cron: '23 * * * *'
+  destination: socrata
+  enabled: true
+  filename: pgrest_data_pub.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  source: postgrest
