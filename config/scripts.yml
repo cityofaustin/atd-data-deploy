@@ -846,9 +846,31 @@ dockless_trips:
   - "0"
   cron: '23 * * * *'
   destination: socrata
-  enabled: true
+  enabled: false
   filename: pgrest_data_pub.py
   init_func: main
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/open_data
   source: postgrest
+mds_etl_lime:
+  docker_cmd: dockless
+  args:
+  - lime
+  cron: '*/15 * * * *'
+  destination: postgrest
+  enabled: true
+  filename: get_data.py
+  init_func: main
+  job: true
+  path: ../transportation-dockless-processing
+  source: mds
+dockless_pt_poly:
+  docker_cmd: dockless
+  cron: '2-59/15 * * * *'
+  destination: postgrest
+  enabled: true
+  filename: pt_in_poly.py
+  init_func: main
+  job: true
+  path: ../transportation-dockless-processing
+  source: mds

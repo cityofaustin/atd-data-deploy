@@ -31,5 +31,15 @@ default:
   - --rm
   - --network=host
   - -w /app/$WORKDIR
-
+dockless:
+  args:
+  - $CMD
+  command: python
+  image: atddocker/dockless-processing
+  options:
+  - -d
+  - -v $BUILD_PATH:/app
+  - --rm
+  - --network=host
+  - -w /app/$WORKDIR
 
