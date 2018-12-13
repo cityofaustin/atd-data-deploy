@@ -840,6 +840,7 @@ sr_asset_assign:
 signal_pms_fulcrum_to_postgre:
   args:
   - --last_run_date
+  - "0"
   cron: 15 2 * * *
   destination: postgrest
   enabled: true
@@ -850,8 +851,9 @@ signal_pms_fulcrum_to_postgre:
   source: fulcrum
 signal_pms_postgre_to_knack:
   args:
-  - --last_run_date
   - data_tracker_test
+  - --last_run_date
+  - "0"
   cron: 15 3 * * *
   destination: knack
   enabled: true
@@ -870,4 +872,3 @@ waze_archive_postgre:
   job: true
   path: ../waze-archive
   source: waze_endpoint
-
