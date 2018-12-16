@@ -844,9 +844,9 @@ dockless_trips:
   - socrata
   - --last_run_date
   - "0"
-  cron: '23 * * * *'
+  cron: '33 * * * *'
   destination: socrata
-  enabled: false
+  enabled: true
   filename: pgrest_data_pub.py
   init_func: main
   job: true
