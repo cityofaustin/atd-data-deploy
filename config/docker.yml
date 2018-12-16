@@ -1,7 +1,9 @@
 # Configuration file for Docker commands.
 #
-# Each entry specifies a `docker run` command that will be generated via `build.py`.
-#
+# Each entry specifies a `docker run` command that will be generated via `build.py`. Note that
+# all docker images must run a Python envrionment which meets the package requirements of
+# `launch.py`, as defined in `requirements.txt`. 
+# 
 # Entries are referenced by Python scripts defined in `config/scripts`. The first entry
 # must be named `default`. Contents are defined as follows:
 #
