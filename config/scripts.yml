@@ -872,3 +872,64 @@ waze_archive_postgre:
   job: true
   path: ../waze-archive
   source: waze_endpoint
+dockless_trips:
+  args:
+  - dockless_trips
+  - -d
+  - socrata
+  - --last_run_date
+  - "0"
+  cron: '33 * * * *'
+  destination: socrata
+  enabled: true
+  filename: pgrest_data_pub.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  source: postgrest
+dockless_load_lime:
+  docker_cmd: dockless
+  args:
+  - lime
+  cron: '*/15 * * * *'
+  destination: postgrest
+  enabled: true
+  filename: get_data.py
+  init_func: main
+  job: true
+  path: ../transportation-dockless-processing
+  source: mds
+dockless_load_bird:
+  docker_cmd: dockless
+  args:
+  - bird
+  cron: '*/21 * * * *'
+  destination: postgrest
+  enabled: true
+  filename: get_data.py
+  init_func: main
+  job: true
+  path: ../transportation-dockless-processing
+  source: mds
+dockless_load_veo:
+  docker_cmd: dockless
+  args:
+  - veoride
+  cron: '39 * * * *'
+  destination: postgrest
+  enabled: true
+  filename: get_data.py
+  init_func: main
+  job: true
+  path: ../transportation-dockless-processing
+  source: mds
+dockless_pt_poly:
+  docker_cmd: dockless
+  cron: '2-59/15 * * * *'
+  destination: postgrest
+  enabled: true
+  filename: pt_in_poly.py
+  init_func: main
+  job: true
+  path: ../transportation-dockless-processing
+  source: mds
