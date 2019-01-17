@@ -876,6 +876,18 @@ dockless_load_bird:
   job: true
   path: ../transportation-dockless-processing
   source: mds
+dockless_load_lyft:
+  docker_cmd: dockless
+  args:
+  - lyft
+  cron: '*/28 * * * *'
+  destination: postgrest
+  enabled: true
+  filename: get_data.py
+  init_func: main
+  job: true
+  path: ../transportation-dockless-processing
+  source: mds
 dockless_load_veo:
   docker_cmd: dockless
   args:
