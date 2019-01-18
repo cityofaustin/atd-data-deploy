@@ -149,7 +149,6 @@ device_status_cameras_cell_modem:
   args:
   - cameras_cell_modem
   - data_tracker_prod
-  - --json
   cron: 30 3 * * *
   destination: knack
   enabled: true
@@ -166,6 +165,18 @@ device_status_cameras_not_cell_modem:
   destination: knack
   enabled: true
   filename: device_status.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: knack
+cameras_json:
+  args:
+  - cameras
+  - data_tracker_prod
+  cron: 3 5 * * *
+  destination: json
+  enabled: true
+  filename: knack_json.py
   init_func: main
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
