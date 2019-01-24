@@ -848,6 +848,41 @@ sr_asset_assign:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
   source: knack
+signal_pms_fulcrum_to_postgre:
+  args:
+  - --last_run_date
+  - "0"
+  cron: 15 2 * * *
+  destination: postgrest
+  enabled: true
+  filename: fulc_postgre.py
+  init_func: main
+  job: true
+  path: ../transportation-knack-fulcrum
+  source: fulcrum
+signal_pms_postgre_to_knack:
+  args:
+  - data_tracker_prod
+  - --last_run_date
+  - "0"
+  cron: 15 3 * * *
+  destination: knack
+  enabled: true
+  filename: signal_pms_fulcrum.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: postgrest
+waze_archive_postgre:
+  cron: "*/5 * * * *"
+  destination: postgrest
+  docker_cmd: default
+  enabled: true
+  filename: waze_psql.py
+  init_func: main
+  job: true
+  path: ../waze-archive
+  source: waze_endpoint
 dockless_trips:
   args:
   - dockless_trips
