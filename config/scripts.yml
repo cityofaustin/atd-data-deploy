@@ -956,3 +956,13 @@ dockless_pt_poly:
   job: true
   path: ../transportation-dockless-processing
   source: mds
+doi_automation:
+  docker_cmd: doi_automation
+  cron: "59 3 * * * *"
+  destination: datacite
+  enabled: true
+  filename: update.py
+  init_func: main
+  job: true
+  path: ../doi-automation
+  source: socrata
