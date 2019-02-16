@@ -2,8 +2,8 @@
 #
 # Each entry specifies a `docker run` command that will be generated via `build.py`. Note that
 # all docker images must run a Python envrionment which meets the package requirements of
-# `launch.py`, as defined in `requirements.txt`. 
-# 
+# `launch.py`, as defined in `requirements.txt`.
+#
 # Entries are referenced by Python scripts defined in `config/scripts`. The first entry
 # must be named `default`. Contents are defined as follows:
 #
@@ -20,7 +20,7 @@
 # - $CMD: This is the means by which a Python script defined in config/scripts.py is run by the
 #     docker container. $CMD will be replaced with the python script name and command
 #     arguments defined in config/scripts.py.
-# - $WORKDIR: The relative path defined in config/scripts.py "workdir" config. 
+# - $WORKDIR: The relative path defined in config/scripts.py "workdir" config.
 ---
 default:
   args:
@@ -44,4 +44,16 @@ dockless:
   - --rm
   - --network=host
   - -w /app/$WORKDIR
-
+scrapd:
+  args:
+   - retrieve
+   - --from "1 1 $(date +%Y)"
+   - --format gsheets
+   - --gcredentials creds.json
+   - --gcontributors "remy.greinhofer@gmail.com:user:writer"
+  image: rgreinho/scrapd:1.3.0
+  options:
+    - -d
+    - -v $BUILD_PATH/gsheet-credentials.json:/usr/src/app/creds.json:ro
+    - --rm
+    - --network=host
