@@ -863,8 +863,7 @@ signal_pms_fulcrum_to_postgre:
 signal_pms_postgre_to_knack:
   args:
   - data_tracker_prod
-  - --last_run_date
-  - "0"
+  - --replace
   cron: 15 3 * * *
   destination: knack
   enabled: true
