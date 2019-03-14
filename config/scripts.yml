@@ -933,6 +933,30 @@ dockless_load_lyft:
   job: true
   path: ../transportation-dockless-processing
   source: mds
+dockless_load_jump:
+  docker_cmd: dockless
+  args:
+  - jump
+  cron: '*/35 * * * *'
+  destination: postgrest
+  enabled: true
+  filename: get_data.py
+  init_func: main
+  job: true
+  path: ../transportation-dockless-processing
+  source: mds
+dockless_load_spin:
+  docker_cmd: dockless
+  args:
+  - spin
+  cron: '*/45 * * * *'
+  destination: postgrest
+  enabled: true
+  filename: get_data.py
+  init_func: main
+  job: true
+  path: ../transportation-dockless-processing
+  source: mds
 dockless_load_veo:
   docker_cmd: dockless
   args:
