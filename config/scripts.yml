@@ -959,7 +959,7 @@ dockless_pt_poly:
 email_service_request:
   args:
     - dts_portal_prod
-  cron: '*/15 * * * *'
+  cron: '*/1 * * * *'
   destination: dts-portal
   enabled: true
   filename: email_service_request
