@@ -265,6 +265,18 @@ device_status_signals:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
   source: knack
+device_status_cabinets:
+  args:
+  - cabinet
+  - data_tracker_prod
+  cron: 25 3 * * *
+  destination: knack
+  enabled: true
+  filename: device_status.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: knack
 device_status_travel_sensors:
   args:
   - travel_sensors
