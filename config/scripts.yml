@@ -267,7 +267,7 @@ device_status_signals:
   source: knack
 device_status_cabinets:
   args:
-  - cabinet
+  - cabinets
   - data_tracker_prod
   cron: 25 3 * * *
   destination: knack
