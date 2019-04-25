@@ -74,7 +74,6 @@ class Script:
             
             if self.args:
                 # set last_run_date value (script must support a --last_run_date arguement)
-                # this will overwrite the last_run_date set by `job.most_recent()`
                 if "--last_run_date" in self.args:
 
                     # find the index of the last_run_date value
@@ -82,10 +81,14 @@ class Script:
                     
                     last_run_date = self.args[index]
 
-                    if not int(last_run_date) and self.job:
-                        last_run_date = self.job.most_recent()
+                    if not last_run_date:
+                        if self.job:
+                            last_run_date = self.job.most_recent()
+                        else:
+                            # when last_run_date is not provided set to 0 unix seconds
+                            last_run_date = 0
 
-                    # command line args must be strings, hence why we stringify last_run_date
+                    # command line args must be strings
                     self.args[index] = str(last_run_date)
 
             if not self.args:
