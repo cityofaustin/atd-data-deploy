@@ -70,24 +70,30 @@ class Script:
             # get new job instance
             if self.job:
                 self.job = self._get_job()
-                self.last_run_date = self.job.most_recent()
                 self.job.start()
 
-            
             if self.args:
                 # set last_run_date value (script must support a --last_run_date arguement)
                 if "--last_run_date" in self.args:
-                    
-                    if not self.last_run_date:
-                        self.last_run_date = "0"
-                        
+
+                    # find the index of the last_run_date value
                     index = self.args.index("--last_run_date") + 1
-                    # **command lin args must be strings, hence why we stringify last_run_date**
-                    self.args[index] = str(self.last_run_date)
+
+                    last_run_date = self.args[index]
+
+                    if not last_run_date:
+                        if self.job:
+                            last_run_date = self.job.most_recent()
+                        else:
+                            # when last_run_date is not provided set to 0 unix seconds
+                            last_run_date = 0
+
+                    # command line args must be strings
+                    self.args[index] = str(last_run_date)
 
             if not self.args:
-                self.args =[]
-                
+                self.args = []
+
             # replace system arguments with script parameters
             self.args.insert(0, self.filename)
             sys.argv = self.args
@@ -206,7 +212,6 @@ class Script:
             self.job.result("error", message=str(e))
         except AttributeError:
             pass
-
 
         self._send_email(str(e))
 
