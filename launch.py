@@ -71,14 +71,14 @@ class Script:
             if self.job:
                 self.job = self._get_job()
                 self.job.start()
-            
+
             if self.args:
                 # set last_run_date value (script must support a --last_run_date arguement)
                 if "--last_run_date" in self.args:
 
                     # find the index of the last_run_date value
                     index = self.args.index("--last_run_date") + 1
-                    
+
                     last_run_date = self.args[index]
 
                     if not last_run_date:
@@ -92,8 +92,8 @@ class Script:
                     self.args[index] = str(last_run_date)
 
             if not self.args:
-                self.args =[]
-                
+                self.args = []
+
             # replace system arguments with script parameters
             self.args.insert(0, self.filename)
             sys.argv = self.args
@@ -212,7 +212,6 @@ class Script:
             self.job.result("error", message=str(e))
         except AttributeError:
             pass
-
 
         self._send_email(str(e))
 
