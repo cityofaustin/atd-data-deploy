@@ -70,20 +70,23 @@ class Script:
             # get new job instance
             if self.job:
                 self.job = self._get_job()
-                self.last_run_date = self.job.most_recent()
                 self.job.start()
-
             
             if self.args:
                 # set last_run_date value (script must support a --last_run_date arguement)
+                # this will overwrite the last_run_date set by `job.most_recent()`
                 if "--last_run_date" in self.args:
-                    
-                    if not self.last_run_date:
-                        self.last_run_date = "0"
-                        
+
+                    # find the index of the last_run_date value
                     index = self.args.index("--last_run_date") + 1
-                    # **command lin args must be strings, hence why we stringify last_run_date**
-                    self.args[index] = str(self.last_run_date)
+                    
+                    last_run_date = self.args[index]
+
+                    if not int(last_run_date) and self.job:
+                        last_run_date = self.job.most_recent()
+
+                    # command line args must be strings, hence why we stringify last_run_date
+                    self.args[index] = str(last_run_date)
 
             if not self.args:
                 self.args =[]
