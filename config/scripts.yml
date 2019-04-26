@@ -402,7 +402,7 @@ markings_agol:
   - 0
   cron: 51 * * * *
   destination: agol
-  enabled: true
+  enabled: false
   filename: markings_agol.py
   init_func: main
   job: true
@@ -984,7 +984,7 @@ email_service_request:
     - dts_portal_prod
   cron: '*/1 * * * *'
   destination: dts-portal
-  enabled: true
+  enabled: false
   filename: email_service_request
   init_func: main
   job: true
