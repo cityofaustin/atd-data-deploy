@@ -77,7 +77,7 @@ cameras_agol:
   - -d
   - agol
   - --last_run_date
-  - "0"
+  - 0
   cron: 00 * * * *
   destination: agol
   enabled: true
@@ -93,7 +93,7 @@ cameras_socrata:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 00 * * * *
   destination: socrata
   enabled: true
@@ -120,7 +120,7 @@ detectors_agol:
   - -d
   - agol
   - --last_run_date
-  - "0"
+  - 0
   cron: 10 2 * * *
   destination: agol
   enabled: true
@@ -136,7 +136,7 @@ detectors_socrata:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 10 2 * * *
   destination: socrata
   enabled: true
@@ -284,7 +284,7 @@ dms_agol:
   - -d
   - agol
   - --last_run_date
-  - "0"
+  - 0
   cron: 10 3 * * *
   destination: agol
   enabled: true
@@ -311,7 +311,7 @@ dms_socrata:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 10 3 * * *
   destination: socrata
   enabled: true
@@ -349,7 +349,7 @@ hazard_flashers_agol:
   - -d
   - agol
   - --last_run_date
-  - "0"
+  - 0
   cron: 15 3 * * *
   destination: agol
   enabled: true
@@ -365,7 +365,7 @@ hazard_flashers_socrata:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 15 3 * * *
   destination: socrata
   enabled: true
@@ -426,7 +426,7 @@ pole_attachments_agol:
   - -d
   - agol
   - --last_run_date
-  - "0"
+  - 0
   cron: 35 * * * *
   destination: agol
   enabled: true
@@ -442,7 +442,7 @@ pole_attachments_socrata:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 35 * * * *
   destination: socrata
   enabled: true
@@ -498,7 +498,7 @@ signal_request_evals:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 37 * * * *
   destination: socrata
   enabled: true
@@ -515,7 +515,7 @@ signal_request_evals_weekly:
   - socrata
   - --replace
   - --last_run_date
-  - "0"
+  - 0
   comment: This is a redundant weekly replace to act as a catch-all to make sure all
     signal request evals are updated.
   cron: 4 * * * thu
@@ -557,7 +557,7 @@ signal_requests:
   - -d
   - agol
   - --last_run_date
-  - "0"
+  - 0
   cron: 40 * * * *
   destination: agol
   enabled: true
@@ -573,7 +573,7 @@ signal_retiming:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 30 * * * *
   destination: socrata
   enabled: true
@@ -589,7 +589,7 @@ signals_agol:
   - -d
   - agol
   - --last_run_date
-  - "0"
+  - 0
   cron: 15 * * * *
   destination: agol
   enabled: true
@@ -605,7 +605,7 @@ signals_socrata:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 15 * * * *
   destination: socrata
   enabled: true
@@ -658,7 +658,7 @@ timed_corridors:
   - socrata
   - --replace
   - --last_run_date
-  - "0"
+  - 0
   comment: Always replace this datastet because we don't know for certain when it
     was modified
   cron: 35 2 * * *
@@ -684,7 +684,7 @@ traffic_reports_pub:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 6-59/5 * * * *
   destination: socrata
   enabled: true
@@ -709,7 +709,7 @@ travel_sensors_agol:
   - -d
   - agol
   - --last_run_date
-  - "0"
+  - 0
   cron: 15 2 * * *
   destination: agol
   enabled: true
@@ -725,7 +725,7 @@ travel_sensors_socrata:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 15 2 * * *
   destination: socrata
   enabled: true
@@ -741,7 +741,7 @@ visitor_log_socrata:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 00 2 * * *
   destination: socrata
   enabled: true
@@ -757,7 +757,7 @@ work_orders_signals:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: 50 * * * *
   destination: socrata
   enabled: true
@@ -780,7 +780,7 @@ csr_flex_notes:
   - csr_flex_notes
   - data_tracker_prod
   - --last_run_date
-  - "0"
+  - 0
   cron: 5 * * * sat
   destination: postgrest
   enabled: true
@@ -851,7 +851,7 @@ sr_asset_assign:
 signal_pms_fulcrum_to_postgre:
   args:
   - --last_run_date
-  - "0"
+  - 0
   cron: 15 2 * * *
   destination: postgrest
   enabled: true
@@ -888,7 +888,7 @@ dockless_trips:
   - -d
   - socrata
   - --last_run_date
-  - "0"
+  - 0
   cron: '33 * * * *'
   destination: socrata
   enabled: true
