@@ -81,7 +81,7 @@ class Script:
 
                     last_run_date = self.args[index]
 
-                    if not last_run_date:
+                    if not int(last_run_date):
                         if self.job:
                             last_run_date = self.job.most_recent()
                         else:
