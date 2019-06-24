@@ -1,3 +1,4 @@
 pyaml
-tdutils
-yagmail
+atd-job-util
+atd-email-util
+ate-log-util
