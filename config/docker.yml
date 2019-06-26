@@ -26,7 +26,7 @@ default:
   args:
   - $CMD
   command: python
-  image: atddocker/tdp:1.1.11
+  image: atddocker/tdp:atd-data-utilities
   options:
   - -d
   - -v $BUILD_PATH:/app
@@ -37,11 +37,10 @@ dockless:
   args:
   - $CMD
   command: python
-  image: atddocker/dockless-processing:0.1.12
+  image: atddocker/dockless-processing:atd-data-utilities
   options:
   - -d
   - -v $BUILD_PATH:/app
   - --rm
   - --network=host
   - -w /app/$WORKDIR
-
