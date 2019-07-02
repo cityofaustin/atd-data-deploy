@@ -26,7 +26,7 @@ default:
   args:
   - $CMD
   command: python
-  image: atddocker/tdp:atd-data-utilities
+  image: atddocker/tdp:master
   options:
   - -d
   - -v $BUILD_PATH:/app
