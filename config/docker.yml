@@ -37,7 +37,7 @@ dockless:
   args:
   - $CMD
   command: python
-  image: atddocker/dockless-processing:atd-data-utilities
+  image: atddocker/dockless-processing
   options:
   - -d
   - -v $BUILD_PATH:/app
