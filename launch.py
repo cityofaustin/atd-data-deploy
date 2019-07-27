@@ -17,9 +17,9 @@ import yaml
 
 import arrow
 
-from tdutils import jobutil
-from tdutils import emailutil
-from tdutils import logutil
+import jobutil
+import emailutil
+import logutil
 from config import secrets
 
 
@@ -81,7 +81,7 @@ class Script:
 
                     last_run_date = self.args[index]
 
-                    if not last_run_date:
+                    if not int(last_run_date):
                         if self.job:
                             last_run_date = self.job.most_recent()
                         else:

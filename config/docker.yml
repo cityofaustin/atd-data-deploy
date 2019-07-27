@@ -44,4 +44,3 @@ dockless:
   - --rm
   - --network=host
   - -w /app/$WORKDIR
-
