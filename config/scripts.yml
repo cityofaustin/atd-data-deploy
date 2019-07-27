@@ -50,7 +50,7 @@ backup:
   filename: backup.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 bcycle_kiosks:
   cron: 1 4 * * *
@@ -59,7 +59,7 @@ bcycle_kiosks:
   filename: bcycle_kiosk_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/bcycle
+  path: ../atd-data-publishing/transportation-data-publishing/bcycle
   source: dropbox
 bcycle_trips:
   cron: 3 4 * * 0
@@ -68,7 +68,7 @@ bcycle_trips:
   filename: bcycle_trip_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/bcycle
+  path: ../atd-data-publishing/transportation-data-publishing/bcycle
   source: dropbox
 cameras_agol:
   args:
@@ -84,7 +84,7 @@ cameras_agol:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 cameras_socrata:
   args:
@@ -100,7 +100,7 @@ cameras_socrata:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 detection_status_signals:
   args:
@@ -111,7 +111,7 @@ detection_status_signals:
   filename: detection_status_signals.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 detectors_agol:
   args:
@@ -127,7 +127,7 @@ detectors_agol:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 detectors_socrata:
   args:
@@ -143,7 +143,7 @@ detectors_socrata:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 device_status_cameras_cell_modem:
   args:
@@ -155,7 +155,7 @@ device_status_cameras_cell_modem:
   filename: device_status.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 device_status_cameras_not_cell_modem:
   args:
@@ -167,7 +167,7 @@ device_status_cameras_not_cell_modem:
   filename: device_status.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 cameras_json:
   args:
@@ -179,7 +179,7 @@ cameras_json:
   filename: knack_json.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 device_status_detectors:
   args:
@@ -191,7 +191,7 @@ device_status_detectors:
   filename: device_status.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 device_status_gridsmart:
   args:
@@ -203,7 +203,7 @@ device_status_gridsmart:
   filename: device_status.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 device_status_log_cameras:
   args:
@@ -215,7 +215,7 @@ device_status_log_cameras:
   filename: device_status_log.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 device_status_log_gridsmart:
   args:
@@ -227,7 +227,7 @@ device_status_log_gridsmart:
   filename: device_status_log.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 device_status_log_signals:
   args:
@@ -239,7 +239,7 @@ device_status_log_signals:
   filename: device_status_log.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 device_status_log_travel_sensors:
   args:
@@ -251,7 +251,7 @@ device_status_log_travel_sensors:
   filename: device_status_log.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 device_status_signals:
   args:
@@ -263,7 +263,7 @@ device_status_signals:
   filename: device_status.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 device_status_travel_sensors:
   args:
@@ -275,7 +275,7 @@ device_status_travel_sensors:
   filename: device_status.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 dms_agol:
   args:
@@ -291,7 +291,7 @@ dms_agol:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 dms_msg_pub:
   args:
@@ -302,7 +302,7 @@ dms_msg_pub:
   filename: dms_msg_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: kits
 dms_socrata:
   args:
@@ -318,7 +318,7 @@ dms_socrata:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 esb_xml_gen:
   args:
@@ -329,7 +329,7 @@ esb_xml_gen:
   filename: esb_xml_gen.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 esb_xml_send:
   args:
@@ -340,7 +340,7 @@ esb_xml_send:
   filename: esb_xml_send.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 hazard_flashers_agol:
   args:
@@ -356,7 +356,7 @@ hazard_flashers_agol:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 hazard_flashers_socrata:
   args:
@@ -372,7 +372,7 @@ hazard_flashers_socrata:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 kits_cctv_push:
   cron: 25 * * * *
@@ -381,7 +381,7 @@ kits_cctv_push:
   filename: kits_cctv_push.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 location_updater:
   args:
@@ -392,7 +392,7 @@ location_updater:
   filename: location_updater.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 markings_agol:
   args:
@@ -406,7 +406,7 @@ markings_agol:
   filename: markings_agol.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 metadata_updater:
   args:
@@ -417,7 +417,7 @@ metadata_updater:
   filename: metadata_updater.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 pole_attachments_agol:
   args:
@@ -433,7 +433,7 @@ pole_attachments_agol:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 pole_attachments_socrata:
   args:
@@ -449,7 +449,7 @@ pole_attachments_socrata:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 radar_count_pub:
   cron: 5-59/15 * * * *
@@ -458,7 +458,7 @@ radar_count_pub:
   filename: radar_count_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: kits
 secondary_signals_updater:
   args:
@@ -469,7 +469,7 @@ secondary_signals_updater:
   filename: secondary_signals_updater.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 sig_stat_pub:
   cron: '*/2 * * * *'
@@ -478,7 +478,7 @@ sig_stat_pub:
   filename: sig_stat_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: kits
 signal_pm_copier:
   args:
@@ -489,7 +489,7 @@ signal_pm_copier:
   filename: signal_pm_copier.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 signal_request_evals:
   args:
@@ -505,7 +505,7 @@ signal_request_evals:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 signal_request_evals_weekly:
   args:
@@ -524,7 +524,7 @@ signal_request_evals_weekly:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 signal_request_ranker_phb:
   args:
@@ -536,7 +536,7 @@ signal_request_ranker_phb:
   filename: signal_request_ranker.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 signal_request_ranker_traffic_signals:
   args:
@@ -548,7 +548,7 @@ signal_request_ranker_traffic_signals:
   filename: signal_request_ranker.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 signal_requests:
   args:
@@ -564,7 +564,7 @@ signal_requests:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 signal_retiming:
   args:
@@ -580,7 +580,7 @@ signal_retiming:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 signals_agol:
   args:
@@ -596,7 +596,7 @@ signals_agol:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 signals_socrata:
   args:
@@ -612,7 +612,7 @@ signals_socrata:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 street_seg_updater:
   args:
@@ -625,7 +625,7 @@ street_seg_updater:
   filename: street_seg_updater.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 task_orders:
   args:
@@ -637,7 +637,7 @@ task_orders:
   filename: task_orders.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: controllers_office
 tcp_business_days:
   args:
@@ -648,7 +648,7 @@ tcp_business_days:
   filename: tcp_business_days.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 timed_corridors:
   args:
@@ -667,7 +667,7 @@ timed_corridors:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 traffic_reports:
   cron: '*/5 * * * *'
@@ -676,7 +676,7 @@ traffic_reports:
   filename: traffic_reports.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: rss
 traffic_reports_pub:
   args:
@@ -691,7 +691,7 @@ traffic_reports_pub:
   filename: pgrest_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: postgrest
 traffic_study_locations:
   cron: 50 3 * * *
@@ -700,7 +700,7 @@ traffic_study_locations:
   filename: traffic_study_locations.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/traffic_study
+  path: ../atd-data-publishing/transportation-data-publishing/traffic_study
   source: agol
 travel_sensors_agol:
   args:
@@ -716,7 +716,7 @@ travel_sensors_agol:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 travel_sensors_socrata:
   args:
@@ -732,7 +732,7 @@ travel_sensors_socrata:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 visitor_log_socrata:
   args:
@@ -748,7 +748,7 @@ visitor_log_socrata:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 work_orders_signals:
   args:
@@ -764,7 +764,7 @@ work_orders_signals:
   filename: knack_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 pr_copier:
   cron: '*/1 * * * *'
@@ -773,7 +773,7 @@ pr_copier:
   filename: pr_copier.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/finance_admin
+  path: ../atd-data-publishing/transportation-data-publishing/finance_admin
   source: finance-admin-portal
 csr_flex_notes:
   args:
@@ -787,7 +787,7 @@ csr_flex_notes:
   filename: knack_postgrest_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 finance_master_agreements:
   args:
@@ -834,7 +834,7 @@ sr_due_date:
   filename: sr_due_date.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 sr_asset_assign:
   args:
@@ -846,7 +846,7 @@ sr_asset_assign:
   filename: sr_asset_assign.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 signal_pms_fulcrum_to_postgre:
   args:
@@ -870,7 +870,7 @@ signal_pms_postgre_to_knack:
   filename: signal_pms_fulcrum.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: postgrest
 waze_archive_postgre:
   cron: "*/5 * * * *"
@@ -895,7 +895,7 @@ dockless_trips:
   filename: pgrest_data_pub.py
   init_func: main
   job: true
-  path: ../transportation-data-publishing/transportation-data-publishing/open_data
+  path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: postgrest
 dockless_load_lime:
   docker_cmd: dockless
