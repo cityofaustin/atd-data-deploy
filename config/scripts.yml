@@ -320,7 +320,7 @@ dms_socrata:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/open_data
   source: knack
-esb_xml_gen:
+esb_xml_gen_data_tracker:
   args:
   - data_tracker_prod
   cron: 1-59/5 * * * *
@@ -331,10 +331,32 @@ esb_xml_gen:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-esb_xml_send:
+esb_xml_send_data_tracker:
   args:
   - data_tracker_prod
   cron: 3-59/5 * * * *
+  destination: ESB
+  enabled: true
+  filename: esb_xml_send.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: knack
+  esb_xml_gen_signs_markings:
+  args:
+  - signs_markings_prod
+  cron: 2-59/5 * * * *
+  destination: xml
+  enabled: true
+  filename: esb_xml_gen.py
+  init_func: main
+  job: true
+  path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
+  source: knack
+esb_xml_send_signs_markings:
+  args:
+  - signs_markings_prod
+  cron: 4-59/5 * * * *
   destination: ESB
   enabled: true
   filename: esb_xml_send.py
