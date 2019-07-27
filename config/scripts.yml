@@ -342,7 +342,7 @@ esb_xml_send_data_tracker:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-  esb_xml_gen_signs_markings:
+esb_xml_gen_signs_markings:
   args:
   - signs_markings_prod
   cron: 2-59/5 * * * *
