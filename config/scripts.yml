@@ -905,16 +905,6 @@ signal_pms_postgre_to_knack:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: postgrest
-waze_archive_postgre:
-  cron: "*/5 * * * *"
-  destination: postgrest
-  docker_cmd: default
-  enabled: true
-  filename: waze_psql.py
-  init_func: main
-  job: true
-  path: ../waze-archive
-  source: waze_endpoint
 dockless_trips:
   args:
   - dockless_trips
@@ -1012,15 +1002,3 @@ dockless_pt_poly:
   job: true
   path: ../transportation-dockless-processing
   source: mds
-email_service_request:
-  args:
-    - dts_portal_prod
-  cron: '*/1 * * * *'
-  destination: dts-portal
-  enabled: true
-  filename: email_service_request
-  init_func: main
-  job: true
-  path: ../transportation-data-service/
-  source: gmail
-
