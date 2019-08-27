@@ -44,3 +44,14 @@ dockless:
   - --rm
   - --network=host
   - -w /app/$WORKDIR
+atd-service-bot:
+  args:
+  - $CMD
+  command: python
+  image: atddocker/atd-service-bot
+  options:
+  - -d
+  - -v $BUILD_PATH:/app
+  - --rm
+  - --network=host
+  - -w /app/$WORKDIR
