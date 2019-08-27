@@ -1002,3 +1002,13 @@ dockless_pt_poly:
   job: true
   path: ../transportation-dockless-processing
   source: mds
+dts_to_github_issue:
+  docker_cmd: atd-service-bot
+  cron: '*/1 * * * *'
+  destination: github
+  enabled: true
+  filename: intake.py
+  init_func: main
+  job: true
+  path: ../atd-service-bot
+  source: dts_portal
