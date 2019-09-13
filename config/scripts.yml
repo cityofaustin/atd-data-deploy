@@ -422,7 +422,7 @@ markings_agol:
   - --replace
   - --last_run_date
   - "0"
-  cron: 51 * * * *
+  cron: 7 4 * * *
   destination: agol
   enabled: true
   filename: markings_agol.py
