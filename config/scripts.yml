@@ -418,11 +418,11 @@ location_updater:
   source: knack
 markings_agol:
   args:
-  - data_tracker_prod
+  - signs_markings_prod
   - --replace
   - --last_run_date
-  - 0
-  cron: 51 * * * *
+  - "0"
+  cron: 7 4 * * *
   destination: agol
   enabled: true
   filename: markings_agol.py
