@@ -430,6 +430,20 @@ markings_agol:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
+signs_agol:
+  args:
+  - signs_markings_prod
+  - --replace
+  - --last_run_date
+  - "0"
+  cron: 1 22 * * *
+  destination: agol
+  enabled: true
+  filename: signs_agol.py
+  init_func: main
+  job: true
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
+  source: knack
 metadata_updater:
   args:
   - data_tracker_prod
