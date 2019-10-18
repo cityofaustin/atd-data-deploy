@@ -434,8 +434,6 @@ signs_agol:
   args:
   - signs_markings_prod
   - --replace
-  - --last_run_date
-  - "0"
   cron: 1 22 * * *
   destination: agol
   enabled: true
