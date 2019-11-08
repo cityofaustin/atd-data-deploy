@@ -1024,3 +1024,15 @@ dts_to_github_issue:
   job: true
   path: ../atd-service-bot
   source: dts_portal
+work_orders_finance_push:
+  args:
+  - --last_run_date
+  - "0"
+  cron: '33 * * * *'
+  destination: finance-admin-portal
+  enabled: true
+  filename: get_work_orders.py
+  init_func: main
+  job: true
+  path: ../atd-data-publishing/transportation-data-publishing/finance_admin
+  source: data_tracker
