@@ -1028,7 +1028,7 @@ work_orders_finance_push:
   args:
   - --last_run_date
   - "0"
-  cron: '33 * * * *'
+  cron: '*/1 * * * *'
   destination: finance-admin-portal
   enabled: true
   filename: get_work_orders.py
