@@ -1016,6 +1016,9 @@ dockless_pt_poly:
   source: mds
 dts_to_github_issue:
   docker_cmd: atd-service-bot
+  args:
+  - -e
+  - prod
   cron: '*/1 * * * *'
   destination: github
   enabled: true
