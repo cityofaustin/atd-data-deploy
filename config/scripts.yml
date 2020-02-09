@@ -661,11 +661,23 @@ street_seg_updater:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-task_orders:
+task_orders_data_tracker:
   args:
   - data_tracker_prod
   comment: ''
   cron: 07 */6 * * *
+  destination: knack
+  enabled: true
+  filename: task_orders.py
+  init_func: main
+  job: true
+  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
+  source: controllers_office
+task_orders_finance_system:
+  args:
+  - finance_admin_prod
+  comment: ''
+  cron: 09 */6 * * *
   destination: knack
   enabled: true
   filename: task_orders.py
