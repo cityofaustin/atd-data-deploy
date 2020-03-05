@@ -608,6 +608,7 @@ signal_retiming:
   - socrata
   - --last_run_date
   - "0"
+  - --replace
   cron: 30 * * * *
   destination: socrata
   enabled: true
