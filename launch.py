@@ -81,9 +81,9 @@ class Script:
 
                     last_run_date = self.args[index]
 
-                    if not int(last_run_date):
+                    if int(last_run_date) == 0:
                         if self.job:
-                            last_run_date = self.job.most_recent()
+                            last_run_date = self.job.most_recent() or 0
                         else:
                             # when last_run_date is not provided set to 0 unix seconds
                             last_run_date = 0
