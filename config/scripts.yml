@@ -464,9 +464,10 @@ pole_attachments_agol:
   - data_tracker_prod
   - -d
   - agol
+  - --replace
   - --last_run_date
   - "0"
-  cron: 35 * * * *
+  cron: 35 6 * * *
   destination: agol
   enabled: true
   filename: knack_data_pub.py
@@ -480,9 +481,10 @@ pole_attachments_socrata:
   - data_tracker_prod
   - -d
   - socrata
+  - --replace
   - --last_run_date
   - "0"
-  cron: 35 * * * *
+  cron: 36 6 * * *
   destination: socrata
   enabled: true
   filename: knack_data_pub.py
