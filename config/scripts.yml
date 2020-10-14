@@ -7,7 +7,7 @@
 #     - args (array, optional): The script's command line arguments
 #
 #     - comment (str, optional): Optional comment which is ignored.
-# 
+#
 #     - cron (str, required): `cron` field definitions. See CRONTAB(5) man page.
 #
 #     - destination (str, optional): Required if running script as a Job. Name
@@ -16,10 +16,10 @@
 #     - docker_cmd (str, required): name of the DOCKER cmd configration that will
 #         run the script. See `config/docker`. If ommitted will use "default" DOCKER
 #         config
-# 
+#
 #     - enabled (bool, optional): If a cron entry should written for this script.
 #         If false or absent the entry will be ignored.
-# 
+#
 #     - filename (str, required): The filename of the script.
 #
 #     - init_func(str, required): The name of function which will be imported and
@@ -32,7 +32,7 @@
 #
 #     - name: Text idenfier of the script. Will be used to name the cron shell script
 #         and *must be unique* to all script entries. | required
-# 
+#
 #     - path (string, required): The path *relative to this repository* where the script
 #         is located.
 #
@@ -42,7 +42,7 @@
 ---
 backup:
   args:
-  - data_tracker_prod
+    - data_tracker_prod
   cron: 50 2 * * *
   destination: csv
   docker_cmd: default
@@ -72,12 +72,12 @@ bcycle_trips:
   source: dropbox
 cameras_agol:
   args:
-  - cameras
-  - data_tracker_prod
-  - -d
-  - agol
-  - --last_run_date
-  - "0"
+    - cameras
+    - data_tracker_prod
+    - -d
+    - agol
+    - --last_run_date
+    - "0"
   cron: 00 * * * *
   destination: agol
   enabled: true
@@ -88,12 +88,12 @@ cameras_agol:
   source: knack
 cameras_socrata:
   args:
-  - cameras
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - cameras
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 00 * * * *
   destination: socrata
   enabled: true
@@ -104,7 +104,7 @@ cameras_socrata:
   source: knack
 detection_status_signals:
   args:
-  - data_tracker_prod
+    - data_tracker_prod
   cron: 50 3 * * *
   destination: knack
   enabled: true
@@ -115,12 +115,12 @@ detection_status_signals:
   source: knack
 detectors_agol:
   args:
-  - detectors
-  - data_tracker_prod
-  - -d
-  - agol
-  - --last_run_date
-  - "0"
+    - detectors
+    - data_tracker_prod
+    - -d
+    - agol
+    - --last_run_date
+    - "0"
   cron: 10 2 * * *
   destination: agol
   enabled: true
@@ -131,12 +131,12 @@ detectors_agol:
   source: knack
 detectors_socrata:
   args:
-  - detectors
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - detectors
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 10 2 * * *
   destination: socrata
   enabled: true
@@ -147,8 +147,8 @@ detectors_socrata:
   source: knack
 device_status_cameras_cell_modem:
   args:
-  - cameras_cell_modem
-  - data_tracker_prod
+    - cameras_cell_modem
+    - data_tracker_prod
   cron: 30 3 * * *
   destination: knack
   enabled: true
@@ -159,8 +159,8 @@ device_status_cameras_cell_modem:
   source: knack
 device_status_cameras_not_cell_modem:
   args:
-  - cameras_not_cell_modem
-  - data_tracker_prod
+    - cameras_not_cell_modem
+    - data_tracker_prod
   cron: 35 3 * * *
   destination: knack
   enabled: true
@@ -171,8 +171,8 @@ device_status_cameras_not_cell_modem:
   source: knack
 cameras_json:
   args:
-  - cameras
-  - data_tracker_prod
+    - cameras
+    - data_tracker_prod
   cron: 3 5 * * *
   destination: json
   enabled: true
@@ -183,8 +183,8 @@ cameras_json:
   source: knack
 device_status_detectors:
   args:
-  - detectors
-  - data_tracker_prod
+    - detectors
+    - data_tracker_prod
   cron: 40 3 * * *
   destination: knack
   enabled: true
@@ -195,8 +195,8 @@ device_status_detectors:
   source: knack
 device_status_gridsmart:
   args:
-  - gridsmart
-  - data_tracker_prod
+    - gridsmart
+    - data_tracker_prod
   cron: 45 3 * * *
   destination: knack
   enabled: true
@@ -207,8 +207,8 @@ device_status_gridsmart:
   source: knack
 device_status_log_cameras:
   args:
-  - cameras
-  - data_tracker_prod
+    - cameras
+    - data_tracker_prod
   cron: 50 3 * * *
   destination: knack
   enabled: true
@@ -219,8 +219,8 @@ device_status_log_cameras:
   source: knack
 device_status_log_gridsmart:
   args:
-  - gridsmart
-  - data_tracker_prod
+    - gridsmart
+    - data_tracker_prod
   cron: 56 3 * * *
   destination: knack
   enabled: true
@@ -231,8 +231,8 @@ device_status_log_gridsmart:
   source: knack
 device_status_log_signals:
   args:
-  - signals
-  - data_tracker_prod
+    - signals
+    - data_tracker_prod
   cron: 52 3 * * *
   destination: knack
   enabled: true
@@ -243,8 +243,8 @@ device_status_log_signals:
   source: knack
 device_status_log_travel_sensors:
   args:
-  - travel_sensors
-  - data_tracker_prod
+    - travel_sensors
+    - data_tracker_prod
   cron: 54 3 * * *
   destination: knack
   enabled: true
@@ -255,8 +255,8 @@ device_status_log_travel_sensors:
   source: knack
 device_status_signals:
   args:
-  - signals
-  - data_tracker_prod
+    - signals
+    - data_tracker_prod
   cron: 25 3 * * *
   destination: knack
   enabled: true
@@ -267,8 +267,8 @@ device_status_signals:
   source: knack
 device_status_travel_sensors:
   args:
-  - travel_sensors
-  - data_tracker_prod
+    - travel_sensors
+    - data_tracker_prod
   cron: 35 3 * * *
   destination: knack
   enabled: true
@@ -279,12 +279,12 @@ device_status_travel_sensors:
   source: knack
 dms_agol:
   args:
-  - dms
-  - data_tracker_prod
-  - -d
-  - agol
-  - --last_run_date
-  - "0"
+    - dms
+    - data_tracker_prod
+    - -d
+    - agol
+    - --last_run_date
+    - "0"
   cron: 10 3 * * *
   destination: agol
   enabled: true
@@ -295,7 +295,7 @@ dms_agol:
   source: knack
 dms_msg_pub:
   args:
-  - data_tracker_prod
+    - data_tracker_prod
   cron: 21 * * * *
   destination: knack
   enabled: true
@@ -306,12 +306,12 @@ dms_msg_pub:
   source: kits
 dms_socrata:
   args:
-  - dms
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - dms
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 10 3 * * *
   destination: socrata
   enabled: true
@@ -322,7 +322,7 @@ dms_socrata:
   source: knack
 esb_xml_gen_data_tracker:
   args:
-  - data_tracker_prod
+    - data_tracker_prod
   cron: 1-59/5 * * * *
   destination: xml
   enabled: true
@@ -333,7 +333,7 @@ esb_xml_gen_data_tracker:
   source: knack
 esb_xml_send_data_tracker:
   args:
-  - data_tracker_prod
+    - data_tracker_prod
   cron: 3-59/5 * * * *
   destination: ESB
   enabled: true
@@ -344,7 +344,7 @@ esb_xml_send_data_tracker:
   source: knack
 esb_xml_gen_signs_markings:
   args:
-  - signs_markings_prod
+    - signs_markings_prod
   cron: 2-59/5 * * * *
   destination: xml
   enabled: true
@@ -355,7 +355,7 @@ esb_xml_gen_signs_markings:
   source: knack
 esb_xml_send_signs_markings:
   args:
-  - signs_markings_prod
+    - signs_markings_prod
   cron: 4-59/5 * * * *
   destination: ESB
   enabled: true
@@ -366,12 +366,12 @@ esb_xml_send_signs_markings:
   source: knack
 hazard_flashers_agol:
   args:
-  - hazard_flashers
-  - data_tracker_prod
-  - -d
-  - agol
-  - --last_run_date
-  - "0"
+    - hazard_flashers
+    - data_tracker_prod
+    - -d
+    - agol
+    - --last_run_date
+    - "0"
   cron: 15 3 * * *
   destination: agol
   enabled: true
@@ -382,12 +382,12 @@ hazard_flashers_agol:
   source: knack
 hazard_flashers_socrata:
   args:
-  - hazard_flashers
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - hazard_flashers
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 15 3 * * *
   destination: socrata
   enabled: true
@@ -407,7 +407,7 @@ kits_cctv_push:
   source: knack
 location_updater:
   args:
-  - data_tracker_prod
+    - data_tracker_prod
   cron: 20 * * * *
   destination: knack
   enabled: true
@@ -418,10 +418,10 @@ location_updater:
   source: knack
 markings_agol:
   args:
-  - signs_markings_prod
-  - --replace
-  - --last_run_date
-  - "0"
+    - signs_markings_prod
+    - --replace
+    - --last_run_date
+    - "0"
   cron: 7 4 * * *
   destination: agol
   enabled: true
@@ -432,8 +432,8 @@ markings_agol:
   source: knack
 signs_agol:
   args:
-  - signs_markings_prod
-  - --replace
+    - signs_markings_prod
+    - --replace
   cron: 1 22 * * *
   destination: agol
   enabled: true
@@ -444,12 +444,12 @@ signs_agol:
   source: knack
 mmc_activities_socrata:
   args:
-  - mmc_activities
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - mmc_activities
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 30 2 * * *
   destination: socrata
   enabled: true
@@ -460,13 +460,13 @@ mmc_activities_socrata:
   source: knack
 pole_attachments_agol:
   args:
-  - pole_attachments
-  - data_tracker_prod
-  - -d
-  - agol
-  - --replace
-  - --last_run_date
-  - "0"
+    - pole_attachments
+    - data_tracker_prod
+    - -d
+    - agol
+    - --replace
+    - --last_run_date
+    - "0"
   cron: 35 6 * * *
   destination: agol
   enabled: true
@@ -477,13 +477,13 @@ pole_attachments_agol:
   source: knack
 pole_attachments_socrata:
   args:
-  - pole_attachments
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --replace
-  - --last_run_date
-  - "0"
+    - pole_attachments
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --replace
+    - --last_run_date
+    - "0"
   cron: 36 6 * * *
   destination: socrata
   enabled: true
@@ -503,7 +503,7 @@ radar_count_pub:
   source: kits
 secondary_signals_updater:
   args:
-  - data_tracker_prod
+    - data_tracker_prod
   cron: 25 2 * * *
   destination: knack
   enabled: true
@@ -513,7 +513,7 @@ secondary_signals_updater:
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
 sig_stat_pub:
-  cron: '*/2 * * * *'
+  cron: "*/2 * * * *"
   destination: socrata
   enabled: true
   filename: sig_stat_pub.py
@@ -523,7 +523,7 @@ sig_stat_pub:
   source: kits
 signal_pm_copier:
   args:
-  - data_tracker_prod
+    - data_tracker_prod
   cron: 20 2 * * *
   destination: knack
   enabled: true
@@ -534,12 +534,12 @@ signal_pm_copier:
   source: knack
 signal_request_evals:
   args:
-  - signal_request_evals
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - signal_request_evals
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 37 * * * *
   destination: socrata
   enabled: true
@@ -550,14 +550,15 @@ signal_request_evals:
   source: knack
 signal_request_evals_weekly:
   args:
-  - signal_request_evals
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --replace
-  - --last_run_date
-  - "0"
-  comment: This is a redundant weekly replace to act as a catch-all to make sure all
+    - signal_request_evals
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --replace
+    - --last_run_date
+    - "0"
+  comment:
+    This is a redundant weekly replace to act as a catch-all to make sure all
     signal request evals are updated.
   cron: 4 * * * thu
   destination: socrata
@@ -569,8 +570,8 @@ signal_request_evals_weekly:
   source: knack
 signal_request_ranker_phb:
   args:
-  - phb
-  - data_tracker_prod
+    - phb
+    - data_tracker_prod
   cron: 45 2 * * *
   destination: knack
   enabled: true
@@ -581,8 +582,8 @@ signal_request_ranker_phb:
   source: knack
 signal_request_ranker_traffic_signals:
   args:
-  - traffic_signal
-  - data_tracker_prod
+    - traffic_signal
+    - data_tracker_prod
   cron: 40 2 * * *
   destination: knack
   enabled: true
@@ -593,12 +594,12 @@ signal_request_ranker_traffic_signals:
   source: knack
 signal_requests:
   args:
-  - signal_requests
-  - data_tracker_prod
-  - -d
-  - agol
-  - --last_run_date
-  - "0"
+    - signal_requests
+    - data_tracker_prod
+    - -d
+    - agol
+    - --last_run_date
+    - "0"
   cron: 40 * * * *
   destination: agol
   enabled: true
@@ -609,13 +610,13 @@ signal_requests:
   source: knack
 signal_retiming:
   args:
-  - signal_retiming
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
-  - --replace
+    - signal_retiming
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
+    - --replace
   cron: 30 * * * *
   destination: socrata
   enabled: true
@@ -626,12 +627,12 @@ signal_retiming:
   source: knack
 signals_agol:
   args:
-  - signals
-  - data_tracker_prod
-  - -d
-  - agol
-  - --last_run_date
-  - "0"
+    - signals
+    - data_tracker_prod
+    - -d
+    - agol
+    - --last_run_date
+    - "0"
   cron: 15 * * * *
   destination: agol
   enabled: true
@@ -642,12 +643,12 @@ signals_agol:
   source: knack
 signals_socrata:
   args:
-  - signals
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - signals
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 15 * * * *
   destination: socrata
   enabled: true
@@ -658,9 +659,9 @@ signals_socrata:
   source: knack
 street_seg_updater:
   args:
-  - data_tracker_prod
-  - --last_run_date
-  - 0
+    - data_tracker_prod
+    - --last_run_date
+    - 0
   cron: 45 * * * *
   destination: knack
   enabled: true
@@ -671,8 +672,8 @@ street_seg_updater:
   source: knack
 task_orders_data_tracker:
   args:
-  - data_tracker_prod
-  comment: ''
+    - data_tracker_prod
+  comment: ""
   cron: 07 */6 * * *
   destination: knack
   enabled: true
@@ -683,8 +684,8 @@ task_orders_data_tracker:
   source: controllers_office
 task_orders_finance_system:
   args:
-  - finance_admin_prod
-  comment: ''
+    - finance_admin_prod
+  comment: ""
   cron: 09 */6 * * *
   destination: knack
   enabled: true
@@ -695,7 +696,7 @@ task_orders_finance_system:
   source: controllers_office
 tcp_business_days:
   args:
-  - data_tracker_prod
+    - data_tracker_prod
   cron: 55 3 * * *
   destination: knack
   enabled: true
@@ -706,14 +707,15 @@ tcp_business_days:
   source: knack
 timed_corridors:
   args:
-  - timed_corridors
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --replace
-  - --last_run_date
-  - "0"
-  comment: Always replace this datastet because we don't know for certain when it
+    - timed_corridors
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --replace
+    - --last_run_date
+    - "0"
+  comment:
+    Always replace this datastet because we don't know for certain when it
     was modified
   cron: 35 2 * * *
   destination: socrata
@@ -724,7 +726,7 @@ timed_corridors:
   path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 traffic_reports:
-  cron: '*/5 * * * *'
+  cron: "*/5 * * * *"
   destination: postgrest
   enabled: true
   filename: traffic_reports.py
@@ -734,11 +736,11 @@ traffic_reports:
   source: rss
 traffic_reports_pub:
   args:
-  - traffic_reports
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - traffic_reports
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 6-59/5 * * * *
   destination: socrata
   enabled: true
@@ -758,12 +760,12 @@ traffic_study_locations:
   source: agol
 travel_sensors_agol:
   args:
-  - travel_sensors
-  - data_tracker_prod
-  - -d
-  - agol
-  - --last_run_date
-  - "0"
+    - travel_sensors
+    - data_tracker_prod
+    - -d
+    - agol
+    - --last_run_date
+    - "0"
   cron: 15 2 * * *
   destination: agol
   enabled: true
@@ -774,12 +776,12 @@ travel_sensors_agol:
   source: knack
 travel_sensors_socrata:
   args:
-  - travel_sensors
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - travel_sensors
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 15 2 * * *
   destination: socrata
   enabled: true
@@ -790,12 +792,12 @@ travel_sensors_socrata:
   source: knack
 visitor_log_socrata:
   args:
-  - atd_visitor_log
-  - visitor_sign_in_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - atd_visitor_log
+    - visitor_sign_in_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 00 2 * * *
   destination: socrata
   enabled: true
@@ -806,12 +808,12 @@ visitor_log_socrata:
   source: knack
 work_orders_signals:
   args:
-  - work_orders_signals
-  - data_tracker_prod
-  - -d
-  - socrata
-  - --last_run_date
-  - "0"
+    - work_orders_signals
+    - data_tracker_prod
+    - -d
+    - socrata
+    - --last_run_date
+    - "0"
   cron: 50 * * * *
   destination: socrata
   enabled: true
@@ -821,7 +823,7 @@ work_orders_signals:
   path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
 pr_copier:
-  cron: '*/1 * * * *'
+  cron: "*/1 * * * *"
   destination: finance-admin-portal
   enabled: true
   filename: pr_copier.py
@@ -831,10 +833,10 @@ pr_copier:
   source: finance-admin-portal
 csr_flex_notes:
   args:
-  - csr_flex_notes
-  - data_tracker_prod
-  - --last_run_date
-  - "0"
+    - csr_flex_notes
+    - data_tracker_prod
+    - --last_run_date
+    - "0"
   cron: 5 * * * sat
   destination: postgrest
   enabled: true
@@ -845,9 +847,9 @@ csr_flex_notes:
   source: knack
 finance_master_agreements:
   args:
-  - master_agreements
-  - finance_admin_prod
-  cron: '01 5 * * *'
+    - master_agreements
+    - finance_admin_prod
+  cron: "01 5 * * *"
   destination: finance-admin-portal
   enabled: true
   filename: finance_scraper.py
@@ -857,9 +859,9 @@ finance_master_agreements:
   source: controllers_office
 finance_objects:
   args:
-  - objects
-  - finance_admin_prod
-  cron: '07 5 * * *'
+    - objects
+    - finance_admin_prod
+  cron: "07 5 * * *"
   destination: finance-admin-portal
   enabled: true
   filename: finance_scraper.py
@@ -869,9 +871,9 @@ finance_objects:
   source: controllers_office
 finance_units:
   args:
-  - units
-  - finance_admin_prod
-  cron: '11 5 * * *'
+    - units
+    - finance_admin_prod
+  cron: "11 5 * * *"
   destination: finance-admin-portal
   enabled: true
   filename: finance_scraper.py
@@ -881,8 +883,8 @@ finance_units:
   source: controllers_office
 sr_due_date_data_tracker:
   args:
-  - data_tracker_prod
-  cron: '07 4 * * *'
+    - data_tracker_prod
+  cron: "07 4 * * *"
   destination: knack
   enabled: true
   filename: sr_due_date.py
@@ -892,8 +894,8 @@ sr_due_date_data_tracker:
   source: knack
 sr_due_date_signs_markings:
   args:
-  - signs_markings_prod
-  cron: '11 4 * * *'
+    - signs_markings_prod
+  cron: "11 4 * * *"
   destination: knack
   enabled: true
   filename: sr_due_date.py
@@ -903,9 +905,9 @@ sr_due_date_signs_markings:
   source: knack
 sr_asset_assign:
   args:
-  - signals
-  - data_tracker_prod
-  cron: '* * * * *'
+    - signals
+    - data_tracker_prod
+  cron: "* * * * *"
   destination: knack
   enabled: true
   filename: sr_asset_assign.py
@@ -915,8 +917,8 @@ sr_asset_assign:
   source: knack
 signal_pms_fulcrum_to_postgre:
   args:
-  - --last_run_date
-  - "0"
+    - --last_run_date
+    - "0"
   cron: 15 2 * * *
   destination: postgrest
   enabled: true
@@ -927,8 +929,8 @@ signal_pms_fulcrum_to_postgre:
   source: fulcrum
 signal_pms_postgre_to_knack:
   args:
-  - data_tracker_prod
-  - --replace
+    - data_tracker_prod
+    - --replace
   cron: 15 3 * * *
   destination: knack
   enabled: true
@@ -937,16 +939,3 @@ signal_pms_postgre_to_knack:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: postgrest
-dts_to_github_issue:
-  docker_cmd: atd-service-bot
-  args:
-  - -e
-  - prod
-  cron: '*/1 * * * *'
-  destination: github
-  enabled: true
-  filename: intake.py
-  init_func: main
-  job: true
-  path: ../atd-service-bot
-  source: dts_portal
