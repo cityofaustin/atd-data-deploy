@@ -442,22 +442,6 @@ signs_agol:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-mmc_activities_socrata:
-  args:
-    - mmc_activities
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --last_run_date
-    - "0"
-  cron: 30 2 * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 pole_attachments_agol:
   args:
     - pole_attachments
