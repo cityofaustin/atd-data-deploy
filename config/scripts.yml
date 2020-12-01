@@ -609,38 +609,6 @@ signal_retiming:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
-signals_agol:
-  args:
-    - signals
-    - data_tracker_prod
-    - -d
-    - agol
-    - --last_run_date
-    - "0"
-  cron: 15 * * * *
-  destination: agol
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
-signals_socrata:
-  args:
-    - signals
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --last_run_date
-    - "0"
-  cron: 15 * * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 street_seg_updater:
   args:
     - data_tracker_prod
