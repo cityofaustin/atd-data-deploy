@@ -484,15 +484,6 @@ secondary_signals_updater:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-sig_stat_pub:
-  cron: "*/2 * * * *"
-  destination: socrata
-  enabled: true
-  filename: sig_stat_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: kits
 signal_pm_copier:
   args:
     - data_tracker_prod
