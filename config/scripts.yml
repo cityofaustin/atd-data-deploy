@@ -70,38 +70,6 @@ bcycle_trips:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/bcycle
   source: dropbox
-cameras_agol:
-  args:
-    - cameras
-    - data_tracker_prod
-    - -d
-    - agol
-    - --last_run_date
-    - "0"
-  cron: 00 * * * *
-  destination: agol
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
-cameras_socrata:
-  args:
-    - cameras
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --last_run_date
-    - "0"
-  cron: 00 * * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 detection_status_signals:
   args:
     - data_tracker_prod
