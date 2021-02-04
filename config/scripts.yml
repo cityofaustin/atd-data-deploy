@@ -52,15 +52,6 @@ backup:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-bcycle_kiosks:
-  cron: 1 4 * * *
-  destination: agol
-  enabled: true
-  filename: bcycle_kiosk_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/bcycle
-  source: dropbox
 bcycle_trips:
   cron: 3 4 * * 0
   destination: socrata
