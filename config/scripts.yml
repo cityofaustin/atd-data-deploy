@@ -236,22 +236,6 @@ device_status_travel_sensors:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-dms_agol:
-  args:
-    - dms
-    - data_tracker_prod
-    - -d
-    - agol
-    - --last_run_date
-    - "0"
-  cron: 10 3 * * *
-  destination: agol
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 dms_msg_pub:
   args:
     - data_tracker_prod
@@ -263,22 +247,6 @@ dms_msg_pub:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: kits
-dms_socrata:
-  args:
-    - dms
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --last_run_date
-    - "0"
-  cron: 10 3 * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 esb_xml_gen_data_tracker:
   args:
     - data_tracker_prod
