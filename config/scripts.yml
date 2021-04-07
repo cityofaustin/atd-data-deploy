@@ -638,22 +638,6 @@ visitor_log_socrata:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
-work_orders_signals:
-  args:
-    - work_orders_signals
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --last_run_date
-    - "0"
-  cron: 50 * * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 pr_copier:
   cron: "*/1 * * * *"
   destination: finance-admin-portal
