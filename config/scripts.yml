@@ -291,38 +291,6 @@ esb_xml_send_signs_markings:
   job: true
   path: ../transportation-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-hazard_flashers_agol:
-  args:
-    - hazard_flashers
-    - data_tracker_prod
-    - -d
-    - agol
-    - --last_run_date
-    - "0"
-  cron: 15 3 * * *
-  destination: agol
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
-hazard_flashers_socrata:
-  args:
-    - hazard_flashers
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --last_run_date
-    - "0"
-  cron: 15 3 * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 kits_cctv_push:
   cron: 25 * * * *
   destination: kits
