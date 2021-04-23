@@ -420,23 +420,6 @@ signal_requests:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
-signal_retiming:
-  args:
-    - signal_retiming
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --last_run_date
-    - "0"
-    - --replace
-  cron: 30 * * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 street_seg_updater:
   args:
     - data_tracker_prod
