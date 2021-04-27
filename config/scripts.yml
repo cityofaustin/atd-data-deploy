@@ -463,38 +463,6 @@ traffic_study_locations:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/traffic_study
   source: agol
-travel_sensors_agol:
-  args:
-    - travel_sensors
-    - data_tracker_prod
-    - -d
-    - agol
-    - --last_run_date
-    - "0"
-  cron: 15 2 * * *
-  destination: agol
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
-travel_sensors_socrata:
-  args:
-    - travel_sensors
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --last_run_date
-    - "0"
-  cron: 15 2 * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 visitor_log_socrata:
   args:
     - atd_visitor_log
