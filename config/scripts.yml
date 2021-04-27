@@ -279,40 +279,6 @@ location_updater:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-pole_attachments_agol:
-  args:
-    - pole_attachments
-    - data_tracker_prod
-    - -d
-    - agol
-    - --replace
-    - --last_run_date
-    - "0"
-  cron: 35 6 * * *
-  destination: agol
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
-pole_attachments_socrata:
-  args:
-    - pole_attachments
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --replace
-    - --last_run_date
-    - "0"
-  cron: 36 6 * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 radar_count_pub:
   cron: 5-59/15 * * * *
   destination: socrata
