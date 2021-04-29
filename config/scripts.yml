@@ -40,18 +40,6 @@
 #         of the source application of this ETL process.
 #
 ---
-backup:
-  args:
-    - data_tracker_prod
-  cron: 50 2 * * *
-  destination: csv
-  docker_cmd: default
-  enabled: true
-  filename: backup.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
 bcycle_trips:
   cron: 3 4 * * 0
   destination: socrata
@@ -488,20 +476,6 @@ pr_copier:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/finance_admin
   source: finance-admin-portal
-csr_flex_notes:
-  args:
-    - csr_flex_notes
-    - data_tracker_prod
-    - --last_run_date
-    - "0"
-  cron: 5 * * * sat
-  destination: postgrest
-  enabled: true
-  filename: knack_postgrest_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
 finance_master_agreements:
   args:
     - master_agreements
