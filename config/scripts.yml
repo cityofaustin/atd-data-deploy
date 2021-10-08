@@ -387,17 +387,6 @@ street_seg_updater:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-tcp_business_days:
-  args:
-    - data_tracker_prod
-  cron: 55 3 * * *
-  destination: knack
-  enabled: true
-  filename: tcp_business_days.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
 timed_corridors:
   args:
     - timed_corridors
