@@ -406,3 +406,34 @@ sr_asset_assign:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
+wt_insert_lake:
+  cron: 0 1 * * *
+  destination: raw
+  docker_cmd: atd-data-lake-etl0
+  enabled: true
+  filename: wt_insert_lake.py
+  init_func: main
+  job: true
+  path: ../atd-data-lake/atd_data_lake
+  source: atd-data-lake
+  args:
+  - --last_run_date
+  - "0"
+  - --start_date
+  - "10"
+gs_insert_lake:
+  cron: 30 1 * * *
+  destination: raw
+  docker_cmd: atd-data-lake-etl0
+  enabled: true
+  filename: gs_insert_lake.py
+  init_func: main
+  job: true
+  path: ../atd-data-lake/atd_data_lake
+  source: atd-data-lake
+  args:
+  - --last_run_date
+  - "0"
+  - --start_date
+  - "10"
+

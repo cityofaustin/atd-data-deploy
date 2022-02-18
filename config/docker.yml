@@ -55,3 +55,15 @@ atd-service-bot:
   - --rm
   - --network=host
   - -w /app/$WORKDIR
+atd-data-lake-etl0:
+  args:
+  - $CMD
+  command: python
+  image: ctrdocker/tdp2
+  options:
+  - -d
+  - -v $BUILD_PATH:/app
+  - --rm
+  - --network=host
+  - -w /app/$WORKDIR
+
