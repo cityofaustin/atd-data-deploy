@@ -127,17 +127,6 @@ kits_cctv_push:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-location_updater:
-  args:
-    - data_tracker_prod
-  cron: 20 * * * *
-  destination: knack
-  enabled: true
-  filename: location_updater.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
 radar_count_pub:
   cron: 5-59/15 * * * *
   destination: socrata
@@ -390,18 +379,6 @@ sr_due_date_signs_markings:
   destination: knack
   enabled: true
   filename: sr_due_date.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
-sr_asset_assign:
-  args:
-    - signals
-    - data_tracker_prod
-  cron: "* * * * *"
-  destination: knack
-  enabled: true
-  filename: sr_asset_assign.py
   init_func: main
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
