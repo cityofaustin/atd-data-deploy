@@ -234,19 +234,6 @@ signal_requests:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
-street_seg_updater:
-  args:
-    - data_tracker_prod
-    - --last_run_date
-    - 0
-  cron: 45 * * * *
-  destination: knack
-  enabled: true
-  filename: street_seg_updater.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
 timed_corridors:
   args:
     - timed_corridors
@@ -267,15 +254,6 @@ timed_corridors:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
-traffic_reports:
-  cron: "*/5 * * * *"
-  destination: postgrest
-  enabled: true
-  filename: traffic_reports.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: rss
 traffic_reports_pub:
   args:
     - traffic_reports

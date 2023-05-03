@@ -2,4 +2,4 @@ arrow
 atd-email-util
 atd-jobs-util
 atd-log-util
-pyaml
+pyaml==5.4.1
