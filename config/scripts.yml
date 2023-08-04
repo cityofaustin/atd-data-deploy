@@ -63,17 +63,6 @@ cameras_json:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-dms_msg_pub:
-  args:
-    - data_tracker_prod
-  cron: 21 * * * *
-  destination: knack
-  enabled: true
-  filename: dms_msg_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: kits
 esb_xml_gen_data_tracker:
   args:
     - data_tracker_prod
