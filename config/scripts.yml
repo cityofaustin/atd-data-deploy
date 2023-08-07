@@ -230,18 +230,3 @@ sr_due_date_signs_markings:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-gs_insert_lake:
-  cron: 30 1 * * *
-  destination: raw
-  docker_cmd: atd-data-lake-etl0
-  enabled: true
-  filename: gs_insert_lake.py
-  init_func: main
-  job: true
-  path: ../atd-data-lake/atd_data_lake
-  source: atd-data-lake
-  args:
-  - --last_run_date
-  - "0"
-  - --start_date
-  - "10"
