@@ -40,17 +40,6 @@
 #         of the source application of this ETL process.
 #
 ---
-detection_status_signals:
-  args:
-    - data_tracker_prod
-  cron: 50 3 * * *
-  destination: knack
-  enabled: true
-  filename: detection_status_signals.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
 cameras_json:
   args:
     - cameras
@@ -174,126 +163,6 @@ signal_request_evals:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: knack
-signal_request_evals_weekly:
-  args:
-    - signal_request_evals
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --replace
-    - --last_run_date
-    - "0"
-  comment:
-    This is a redundant weekly replace to act as a catch-all to make sure all
-    signal request evals are updated.
-  cron: 4 * * * thu
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
-signal_request_ranker_phb:
-  args:
-    - phb
-    - data_tracker_prod
-  cron: 45 2 * * *
-  destination: knack
-  enabled: true
-  filename: signal_request_ranker.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
-signal_request_ranker_traffic_signals:
-  args:
-    - traffic_signal
-    - data_tracker_prod
-  cron: 40 2 * * *
-  destination: knack
-  enabled: true
-  filename: signal_request_ranker.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
-signal_requests:
-  args:
-    - signal_requests
-    - data_tracker_prod
-    - -d
-    - agol
-    - --last_run_date
-    - "0"
-  cron: 40 * * * *
-  destination: agol
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
-timed_corridors:
-  args:
-    - timed_corridors
-    - data_tracker_prod
-    - -d
-    - socrata
-    - --replace
-    - --last_run_date
-    - "0"
-  comment:
-    Always replace this datastet because we don't know for certain when it
-    was modified
-  cron: 35 2 * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
-traffic_reports_pub:
-  args:
-    - traffic_reports
-    - -d
-    - socrata
-    - --last_run_date
-    - "0"
-  cron: 6-59/5 * * * *
-  destination: socrata
-  enabled: true
-  filename: pgrest_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: postgrest
-traffic_study_locations:
-  cron: 50 3 * * *
-  destination: socrata
-  enabled: true
-  filename: traffic_study_locations.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/traffic_study
-  source: agol
-visitor_log_socrata:
-  args:
-    - atd_visitor_log
-    - visitor_sign_in_prod
-    - -d
-    - socrata
-    - --last_run_date
-    - "0"
-  cron: 00 2 * * *
-  destination: socrata
-  enabled: true
-  filename: knack_data_pub.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/open_data
-  source: knack
 pr_copier:
   cron: "*/1 * * * *"
   destination: finance-admin-portal
@@ -361,21 +230,6 @@ sr_due_date_signs_markings:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-wt_insert_lake:
-  cron: 0 1 * * *
-  destination: raw
-  docker_cmd: atd-data-lake-etl0
-  enabled: true
-  filename: wt_insert_lake.py
-  init_func: main
-  job: true
-  path: ../atd-data-lake/atd_data_lake
-  source: atd-data-lake
-  args:
-  - --last_run_date
-  - "0"
-  - --start_date
-  - "10"
 gs_insert_lake:
   cron: 30 1 * * *
   destination: raw
@@ -391,4 +245,3 @@ gs_insert_lake:
   - "0"
   - --start_date
   - "10"
-
