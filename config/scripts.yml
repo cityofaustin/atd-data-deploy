@@ -125,17 +125,6 @@ radar_count_pub:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/open_data
   source: kits
-secondary_signals_updater:
-  args:
-    - data_tracker_prod
-  cron: 25 2 * * *
-  destination: knack
-  enabled: true
-  filename: secondary_signals_updater.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
 signal_pm_copier:
   args:
     - data_tracker_prod
