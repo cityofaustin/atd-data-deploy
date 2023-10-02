@@ -98,42 +98,6 @@ pr_copier:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/finance_admin
   source: finance-admin-portal
-finance_master_agreements:
-  args:
-    - master_agreements
-    - finance_admin_prod
-  cron: "01 5 * * *"
-  destination: finance-admin-portal
-  enabled: true
-  filename: finance_scraper.py
-  init_func: main
-  job: true
-  path: ../finance-scraper
-  source: controllers_office
-finance_objects:
-  args:
-    - objects
-    - finance_admin_prod
-  cron: "07 5 * * *"
-  destination: finance-admin-portal
-  enabled: true
-  filename: finance_scraper.py
-  init_func: main
-  job: true
-  path: ../finance-scraper
-  source: controllers_office
-finance_units:
-  args:
-    - units
-    - finance_admin_prod
-  cron: "11 5 * * *"
-  destination: finance-admin-portal
-  enabled: true
-  filename: finance_scraper.py
-  init_func: main
-  job: true
-  path: ../finance-scraper
-  source: controllers_office
 sr_due_date_data_tracker:
   args:
     - data_tracker_prod
