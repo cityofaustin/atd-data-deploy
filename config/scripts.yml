@@ -74,15 +74,6 @@ signal_pm_copier:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-pr_copier:
-  cron: "*/1 * * * *"
-  destination: finance-admin-portal
-  enabled: true
-  filename: pr_copier.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/finance_admin
-  source: finance-admin-portal
 sr_due_date_data_tracker:
   args:
     - data_tracker_prod
