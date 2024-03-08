@@ -63,17 +63,6 @@ cameras_json:
   job: true
   path: ../atd-data-publishing/transportation-data-publishing/data_tracker
   source: knack
-signal_pm_copier:
-  args:
-    - data_tracker_prod
-  cron: 20 2 * * *
-  destination: knack
-  enabled: true
-  filename: signal_pm_copier.py
-  init_func: main
-  job: true
-  path: ../atd-data-publishing/transportation-data-publishing/data_tracker
-  source: knack
 sr_due_date_data_tracker:
   args:
     - data_tracker_prod
