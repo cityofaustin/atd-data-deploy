@@ -7,10 +7,10 @@ import yaml
 import sys
 
 with open("./config/docker.yml", "r") as fin:
-    config_docker = yaml.load(fin)
+    config_docker = yaml.load(fin, Loader=yaml.CLoader)
 
 with open("./config/scripts.yml", "r") as fin:
-    config_scripts = yaml.load(fin)
+    config_scripts = yaml.load(fin,  Loader=yaml.CLoader)
 
 
 def check_version():
